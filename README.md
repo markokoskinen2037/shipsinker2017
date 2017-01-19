@@ -1,5 +1,9 @@
 # ShipSinker2017 (ohjelmoinnin harjoitustyö)
 
+## Sovelluksen kuvaus
+Aihe: 
+
+
 
 ### Tuntikirjanpito
 Päivä | Tunnit | Kuvaus
