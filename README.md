@@ -1,1 +1,1 @@
-# shipsinker2017
+# ShipSinker2017 (ohjelmoinnin harjoitustyö)
