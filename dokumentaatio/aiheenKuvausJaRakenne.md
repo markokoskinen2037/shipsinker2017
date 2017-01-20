@@ -7,7 +7,7 @@ Pelaajalle tarjotaan mahdollisuus asetella laivat itse, tai ne voidaan asetella 
 Parhaat tulokset kirjataan ylös tiedostoon.
 Peli on vuoropohjainen.
 
-**Käyttäjät: ** pelaaja
+**Käyttäjät:** pelaaja
 
 **Kaikkien käyttäjien toiminnot**
 - pelin pelaaminen
