@@ -5,8 +5,6 @@
  */
 package core;
 
-import java.awt.Color;
-
 /**
  *
  * @author Beast
