@@ -2,6 +2,8 @@
 
 
 
+
+
 - Pelissä pelaajan tarkoitus on tuhota vastustajan laivat, ennen kuin vastustaja tuhoaa pelaajan laivat. Se kenen laivat on tuhottu ensin, häviää pelin.
 - Peliin on tarkoitus lisätä myöhemmin tekoäly, ja kenties laittaa tietokone pelaamaan tietokonetta vastaan.
 - Pelaajalle tarjotaan mahdollisuus asetella laivat itse, tai ne voidaan asetella automaattisesti.
