@@ -5,6 +5,9 @@
  */
 package fi.marko.gui;
 
+import java.awt.Color;
+import javax.swing.JButton;
+
 /**
  *
  * @author Beast
@@ -17,6 +20,515 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         super.setTitle("Ship Shinker 2017");
+        A1.setBackground(Color.WHITE);
+        A2.setBackground(Color.WHITE);
+        A3.setBackground(Color.WHITE);
+        A4.setBackground(Color.WHITE);
+        A5.setBackground(Color.WHITE);
+        A6.setBackground(Color.WHITE);
+        A7.setBackground(Color.WHITE);
+        A8.setBackground(Color.WHITE);
+        A9.setBackground(Color.WHITE);
+        A10.setBackground(Color.WHITE);
+
+        B1.setBackground(Color.WHITE);
+        B2.setBackground(Color.WHITE);
+        B3.setBackground(Color.WHITE);
+        B4.setBackground(Color.WHITE);
+        B5.setBackground(Color.WHITE);
+        B6.setBackground(Color.WHITE);
+        B7.setBackground(Color.WHITE);
+        B8.setBackground(Color.WHITE);
+        B9.setBackground(Color.WHITE);
+        B10.setBackground(Color.WHITE);
+
+        C1.setBackground(Color.WHITE);
+        C2.setBackground(Color.WHITE);
+        C3.setBackground(Color.WHITE);
+        C4.setBackground(Color.WHITE);
+        C5.setBackground(Color.WHITE);
+        C6.setBackground(Color.WHITE);
+        C7.setBackground(Color.WHITE);
+        C8.setBackground(Color.WHITE);
+        C9.setBackground(Color.WHITE);
+        C10.setBackground(Color.WHITE);
+
+        D1.setBackground(Color.WHITE);
+        D2.setBackground(Color.WHITE);
+        D3.setBackground(Color.WHITE);
+        D4.setBackground(Color.WHITE);
+        D5.setBackground(Color.WHITE);
+        D6.setBackground(Color.WHITE);
+        D7.setBackground(Color.WHITE);
+        D8.setBackground(Color.WHITE);
+        D9.setBackground(Color.WHITE);
+        D10.setBackground(Color.WHITE);
+
+        E1.setBackground(Color.WHITE);
+        E2.setBackground(Color.WHITE);
+        E3.setBackground(Color.WHITE);
+        E4.setBackground(Color.WHITE);
+        E5.setBackground(Color.WHITE);
+        E6.setBackground(Color.WHITE);
+        E7.setBackground(Color.WHITE);
+        E8.setBackground(Color.WHITE);
+        E9.setBackground(Color.WHITE);
+        E10.setBackground(Color.WHITE);
+
+        F1.setBackground(Color.WHITE);
+        F2.setBackground(Color.WHITE);
+        F3.setBackground(Color.WHITE);
+        F4.setBackground(Color.WHITE);
+        F5.setBackground(Color.WHITE);
+        F6.setBackground(Color.WHITE);
+        F7.setBackground(Color.WHITE);
+        F8.setBackground(Color.WHITE);
+        F9.setBackground(Color.WHITE);
+        F10.setBackground(Color.WHITE);
+
+        G1.setBackground(Color.WHITE);
+        G2.setBackground(Color.WHITE);
+        G3.setBackground(Color.WHITE);
+        G4.setBackground(Color.WHITE);
+        G5.setBackground(Color.WHITE);
+        G6.setBackground(Color.WHITE);
+        G7.setBackground(Color.WHITE);
+        G8.setBackground(Color.WHITE);
+        G9.setBackground(Color.WHITE);
+        G10.setBackground(Color.WHITE);
+
+        H1.setBackground(Color.WHITE);
+        H2.setBackground(Color.WHITE);
+        H3.setBackground(Color.WHITE);
+        H4.setBackground(Color.WHITE);
+        H5.setBackground(Color.WHITE);
+        H6.setBackground(Color.WHITE);
+        H7.setBackground(Color.WHITE);
+        H8.setBackground(Color.WHITE);
+        H9.setBackground(Color.WHITE);
+        H10.setBackground(Color.WHITE);
+
+        I1.setBackground(Color.WHITE);
+        I2.setBackground(Color.WHITE);
+        I3.setBackground(Color.WHITE);
+        I4.setBackground(Color.WHITE);
+        I5.setBackground(Color.WHITE);
+        I6.setBackground(Color.WHITE);
+        I7.setBackground(Color.WHITE);
+        I8.setBackground(Color.WHITE);
+        I9.setBackground(Color.WHITE);
+        I10.setBackground(Color.WHITE);
+
+        J1.setBackground(Color.WHITE);
+        J2.setBackground(Color.WHITE);
+        J3.setBackground(Color.WHITE);
+        J4.setBackground(Color.WHITE);
+        J5.setBackground(Color.WHITE);
+        J6.setBackground(Color.WHITE);
+        J7.setBackground(Color.WHITE);
+        J8.setBackground(Color.WHITE);
+        J9.setBackground(Color.WHITE);
+        J10.setBackground(Color.WHITE);
+    }
+
+    public JButton getA10() {
+        return A10;
+    }
+
+    public JButton getA2() {
+        return A2;
+    }
+
+    public JButton getA3() {
+        return A3;
+    }
+
+    public JButton getA4() {
+        return A4;
+    }
+
+    public JButton getA5() {
+        return A5;
+    }
+
+    public JButton getA6() {
+        return A6;
+    }
+
+    public JButton getA7() {
+        return A7;
+    }
+
+    public JButton getA8() {
+        return A8;
+    }
+
+    public JButton getA9() {
+        return A9;
+    }
+
+    public JButton getB1() {
+        return B1;
+    }
+
+    public JButton getB10() {
+        return B10;
+    }
+
+    public JButton getB2() {
+        return B2;
+    }
+
+    public JButton getB3() {
+        return B3;
+    }
+
+    public JButton getB4() {
+        return B4;
+    }
+
+    public JButton getB5() {
+        return B5;
+    }
+
+    public JButton getB6() {
+        return B6;
+    }
+
+    public JButton getB7() {
+        return B7;
+    }
+
+    public JButton getB8() {
+        return B8;
+    }
+
+    public JButton getB9() {
+        return B9;
+    }
+
+    public JButton getC1() {
+        return C1;
+    }
+
+    public JButton getC10() {
+        return C10;
+    }
+
+    public JButton getC2() {
+        return C2;
+    }
+
+    public JButton getC3() {
+        return C3;
+    }
+
+    public JButton getC4() {
+        return C4;
+    }
+
+    public JButton getC5() {
+        return C5;
+    }
+
+    public JButton getC6() {
+        return C6;
+    }
+
+    public JButton getC7() {
+        return C7;
+    }
+
+    public JButton getC8() {
+        return C8;
+    }
+
+    public JButton getC9() {
+        return C9;
+    }
+
+    public JButton getD1() {
+        return D1;
+    }
+
+    public JButton getD10() {
+        return D10;
+    }
+
+    public JButton getD2() {
+        return D2;
+    }
+
+    public JButton getD3() {
+        return D3;
+    }
+
+    public JButton getD4() {
+        return D4;
+    }
+
+    public JButton getD5() {
+        return D5;
+    }
+
+    public JButton getD6() {
+        return D6;
+    }
+
+    public JButton getD7() {
+        return D7;
+    }
+
+    public JButton getD8() {
+        return D8;
+    }
+
+    public JButton getD9() {
+        return D9;
+    }
+
+    public JButton getE1() {
+        return E1;
+    }
+
+    public JButton getE10() {
+        return E10;
+    }
+
+    public JButton getE2() {
+        return E2;
+    }
+
+    public JButton getE3() {
+        return E3;
+    }
+
+    public JButton getE4() {
+        return E4;
+    }
+
+    public JButton getE5() {
+        return E5;
+    }
+
+    public JButton getE6() {
+        return E6;
+    }
+
+    public JButton getE7() {
+        return E7;
+    }
+
+    public JButton getE8() {
+        return E8;
+    }
+
+    public JButton getE9() {
+        return E9;
+    }
+
+    public JButton getF1() {
+        return F1;
+    }
+
+    public JButton getF10() {
+        return F10;
+    }
+
+    public JButton getF2() {
+        return F2;
+    }
+
+    public JButton getF3() {
+        return F3;
+    }
+
+    public JButton getF4() {
+        return F4;
+    }
+
+    public JButton getF5() {
+        return F5;
+    }
+
+    public JButton getF6() {
+        return F6;
+    }
+
+    public JButton getF7() {
+        return F7;
+    }
+
+    public JButton getF8() {
+        return F8;
+    }
+
+    public JButton getF9() {
+        return F9;
+    }
+
+    public JButton getG1() {
+        return G1;
+    }
+
+    public JButton getG10() {
+        return G10;
+    }
+
+    public JButton getG2() {
+        return G2;
+    }
+
+    public JButton getG3() {
+        return G3;
+    }
+
+    public JButton getG4() {
+        return G4;
+    }
+
+    public JButton getG5() {
+        return G5;
+    }
+
+    public JButton getG6() {
+        return G6;
+    }
+
+    public JButton getG7() {
+        return G7;
+    }
+
+    public JButton getG8() {
+        return G8;
+    }
+
+    public JButton getG9() {
+        return G9;
+    }
+
+    public JButton getH1() {
+        return H1;
+    }
+
+    public JButton getH10() {
+        return H10;
+    }
+
+    public JButton getH2() {
+        return H2;
+    }
+
+    public JButton getH3() {
+        return H3;
+    }
+
+    public JButton getH4() {
+        return H4;
+    }
+
+    public JButton getH5() {
+        return H5;
+    }
+
+    public JButton getH6() {
+        return H6;
+    }
+
+    public JButton getH7() {
+        return H7;
+    }
+
+    public JButton getH8() {
+        return H8;
+    }
+
+    public JButton getH9() {
+        return H9;
+    }
+
+    public JButton getI1() {
+        return I1;
+    }
+
+    public JButton getI10() {
+        return I10;
+    }
+
+    public JButton getI2() {
+        return I2;
+    }
+
+    public JButton getI3() {
+        return I3;
+    }
+
+    public JButton getI4() {
+        return I4;
+    }
+
+    public JButton getI5() {
+        return I5;
+    }
+
+    public JButton getI6() {
+        return I6;
+    }
+
+    public JButton getI7() {
+        return I7;
+    }
+
+    public JButton getI8() {
+        return I8;
+    }
+
+    public JButton getI9() {
+        return I9;
+    }
+
+    public JButton getJ1() {
+        return J1;
+    }
+
+    public JButton getJ10() {
+        return J10;
+    }
+
+    public JButton getJ2() {
+        return J2;
+    }
+
+    public JButton getJ3() {
+        return J3;
+    }
+
+    public JButton getJ4() {
+        return J4;
+    }
+
+    public JButton getJ5() {
+        return J5;
+    }
+
+    public JButton getJ6() {
+        return J6;
+    }
+
+    public JButton getJ7() {
+        return J7;
+    }
+
+    public JButton getJ8() {
+        return J8;
+    }
+
+    public JButton getJ9() {
+        return J9;
+    }
+
+    public JButton getA1() {
+        return A1;
     }
 
     /**
