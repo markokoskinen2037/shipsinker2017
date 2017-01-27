@@ -14,4 +14,6 @@ Peli on vuoropohjainen.
 - tulosten tarkkailu
 - asetusten muokkaaminen
 
+**Luokkakaavio**
+
 ![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio2.png)
