@@ -6,4 +6,4 @@ Päivä | Tunnit | Kuvaus
 22.01.2017| 0.1h | Poistettu turha desktop.ini
 23.01.2017| 0.1h | Lisätty README.md
 24.01.2017| 1.5h | Luotu luokat Ship ja GameField. Lisätty pelialustaan 2 laivaa testailua varten, mukautettu käyttöliittymän värejä
-27.01.2017| 3.0h | Korjattu checstyle virheet. Lisätty metodi joka tarkistaa sekunnin välein laivojen lukumäärän. Kirjoitettu Junit testit. Luotu luokkakaavio.
+27.01.2017| 3.0h | Korjattu checkstyle virheet. Lisätty metodi joka tarkistaa sekunnin välein laivojen lukumäärän. Kirjoitettu Junit testit. Luotu luokkakaavio.
