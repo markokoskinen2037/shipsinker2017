@@ -13,3 +13,5 @@ Peli on vuoropohjainen.
 - pelin pelaaminen
 - tulosten tarkkailu
 - asetusten muokkaaminen
+
+![luokkakaavio](/kuvat/luokkakaavio.png)
