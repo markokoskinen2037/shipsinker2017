@@ -11,6 +11,6 @@
 - Peli on vuoropohjainen.
 
 ##Dokumentaatio
-[aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+ - [Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
-[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+ - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
