@@ -1,5 +1,6 @@
-package fi.marko.gui;
+package laivanupotus.gui;
 
+import laivanupotus.gui.Gui;
 import java.awt.Color;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;

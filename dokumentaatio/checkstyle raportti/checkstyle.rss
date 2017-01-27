@@ -46,35 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.marko.core.Main.java">fi/marko/core/Main.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.marko.logic.Ship.java">fi/marko/logic/Ship.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.marko.gui.Gui.java">fi/marko/gui/Gui.java</a>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Gui.java">laivanupotus/gui/Gui.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +60,35 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.marko.logic.GameField.java">fi/marko/logic/GameField.java</a>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.core.Main.java">laivanupotus/core/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.logic.GameField.java">laivanupotus/logic/GameField.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.logic.Ship.java">laivanupotus/logic/Ship.java</a>
                 </td>
                 <td>
                   0

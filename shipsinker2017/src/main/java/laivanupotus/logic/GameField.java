@@ -1,6 +1,6 @@
-package fi.marko.logic;
+package laivanupotus.logic;
 
-import fi.marko.gui.Gui;
+import laivanupotus.gui.Gui;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

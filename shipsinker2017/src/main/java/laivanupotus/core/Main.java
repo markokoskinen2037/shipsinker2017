@@ -1,7 +1,7 @@
-package fi.marko.core;
+package laivanupotus.core;
 
-import fi.marko.logic.GameField;
-import fi.marko.gui.Gui;
+import laivanupotus.logic.GameField;
+import laivanupotus.gui.Gui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

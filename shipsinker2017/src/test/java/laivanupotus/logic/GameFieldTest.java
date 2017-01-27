@@ -1,6 +1,7 @@
-package fi.marko.logic;
+package laivanupotus.logic;
 
-import fi.marko.gui.Gui;
+import laivanupotus.logic.GameField;
+import laivanupotus.gui.Gui;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
