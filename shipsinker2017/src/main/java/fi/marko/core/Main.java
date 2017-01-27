@@ -1,6 +1,7 @@
 package fi.marko.core;
 
-import fi.marko.gui.GUI;
+import fi.marko.logic.GameField;
+import fi.marko.gui.Gui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,7 +10,7 @@ import fi.marko.gui.GUI;
  */
 /**
  *
- * @author Beast
+ * @author Marko
  */
 public class Main {
 
@@ -17,11 +18,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GUI gui = new GUI();
+        Gui gui = new Gui();
         GameField gameField = new GameField(gui);
-        
-        
+        gameField.createTestShips();
         gui.setVisible(true);
+
+
+
     }
 
 }

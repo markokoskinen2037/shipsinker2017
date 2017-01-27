@@ -9,3 +9,7 @@
 - Pelaajalle tarjotaan mahdollisuus asetella laivat itse, tai ne voidaan asetella automaattisesti.
 - Parhaat tulokset kirjataan ylös tiedostoon.
 - Peli on vuoropohjainen.
+
+##Dokumentaatio
+[aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
