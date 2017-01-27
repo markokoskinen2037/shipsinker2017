@@ -14,4 +14,4 @@ Peli on vuoropohjainen.
 - tulosten tarkkailu
 - asetusten muokkaaminen
 
-![luokkakaavio](dokumentaatio/kuvat/luokkakaavio.png)
+![luokkakaavio](shipsinker2017/dokumentaatio/kuvat/luokkakaavio.png)
