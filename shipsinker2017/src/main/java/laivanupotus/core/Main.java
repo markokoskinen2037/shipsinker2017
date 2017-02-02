@@ -17,13 +17,11 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Lisätty ilmoitus kun peli on voitettu. Lisätty laskuri joka laskee sekunnit pelin aloituksesta
         Gui gui = new Gui();
         GameField gameField = new GameField(gui);
         gameField.createTestShips();
         gui.setVisible(true);
-
-
 
     }
 

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,7 +43,7 @@ public final class GameField {
         return shipsLeft;
     }
 
-    public boolean isVictory() {
+    public boolean hasEnded() {
         return victory;
     }
 
@@ -183,9 +184,23 @@ public final class GameField {
 
     private void checkForShipsEverySecond() { //Checks how many ships are still left every second
         this.running = true;
+
         Runnable checkRemainingShips = new Runnable() {
+            int gametime = 0;
+
             public void run() {
-                System.out.println("Ships remaining: " + getShipsLeft());
+
+                if (getShipsLeft() >= 1) {
+                    System.out.println("Ships remaining: " + getShipsLeft());
+                    gametime++;
+                }
+
+                if (getShipsLeft() == 0 && running) {
+                    gui.setVisible(false);
+                    JOptionPane.showMessageDialog(gui, "You beat the game in " + gametime + " seconds!");
+                    running = false;
+                }
+
             }
         };
 

@@ -5,7 +5,11 @@
  */
 package laivanupotus.logic;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 /**
  *
@@ -18,6 +22,7 @@ public class Ship {
     private boolean destroyed = false;
 
     public Ship(ArrayList<String> list, int size) {
+
         this.originalLength = list.size();
         this.size = size;
         this.cordinates = list;

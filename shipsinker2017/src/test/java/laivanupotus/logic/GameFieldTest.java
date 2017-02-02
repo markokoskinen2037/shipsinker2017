@@ -34,7 +34,7 @@ public class GameFieldTest {
 
     @Test
     public void victoryIsFalseByDefault(){ //Boolean victory should ofcourse be false in the beginning
-        assertEquals(gameField.isVictory(), false);
+        assertEquals(gameField.hasEnded(), false);
     }
     
     @Test
