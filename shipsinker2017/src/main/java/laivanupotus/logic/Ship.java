@@ -49,10 +49,14 @@ public class Ship {
         return s;
     }
 
+    public ArrayList<String> getCordinates() {
+        return cordinates;
+    }
+
     public void destroyPart() {
         this.size = this.size - 1;
         if (this.size == 0) {
-            System.out.println("You just sank a ship size of " + this.cordinates.size());
+            System.out.println("You just sank a ship size of " + this.originalLength);
             this.destroyed = true;
         }
     }

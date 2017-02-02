@@ -1,6 +1,5 @@
 package laivanupotus.logic;
 
-import laivanupotus.logic.Ship;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
