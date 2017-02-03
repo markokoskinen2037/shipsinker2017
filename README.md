@@ -14,3 +14,7 @@
  - [Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
  - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+
+ - [Pit-raportti](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/dokumentaatio/pit-raportti/201702031823/index.html)
+
+ - [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
