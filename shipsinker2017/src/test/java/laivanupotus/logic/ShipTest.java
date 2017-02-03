@@ -46,4 +46,19 @@ public class ShipTest {
     public void toStringIsCorrect() {
         assertEquals(testShip.toString(), "Shipsize:4 A1 | A2 | A3 | A4 | ");
     }
+
+    @Test
+    public void getCoordinatesIsCorrect() {
+        ArrayList testShipCoordinates = new ArrayList<>(); //Creates a testShip
+        testShipCoordinates.add("A1");
+        testShipCoordinates.add("A2");
+        testShipCoordinates.add("A3");
+        testShipCoordinates.add("A4");
+        assertEquals(this.testShip.getCordinates(), testShipCoordinates);
+    }
+
+    @Test
+    public void destroyPartReturnsFalse() {
+        assertEquals(this.testShip.destroyPart(), false);
+    }
 }

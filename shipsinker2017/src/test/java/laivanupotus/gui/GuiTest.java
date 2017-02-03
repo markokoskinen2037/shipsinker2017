@@ -1,6 +1,5 @@
 package laivanupotus.gui;
 
-import laivanupotus.gui.Gui;
 import java.awt.Color;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -33,6 +32,11 @@ public class GuiTest {
     @Test
     public void buttonTestIsEmpty() { //By default button should have no text
         assertEquals(gui.getA1().getText(), "");
+    }
+
+    @Test
+    public void buttonListSizeIsCorrect() {
+        assertEquals(this.gui.getButtonList().size(), 100);
     }
 
 }

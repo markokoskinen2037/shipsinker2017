@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 import javax.swing.JButton;
 
 /**
@@ -23,6 +22,10 @@ public class Gui extends javax.swing.JFrame {
      */
     private HashMap buttonMappi;
     private ArrayList<JButton> buttonList;
+
+    public ArrayList<JButton> getButtonList() {
+        return buttonList;
+    }
 
     public Gui() {
         initComponents();

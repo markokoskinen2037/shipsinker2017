@@ -1,6 +1,5 @@
 package laivanupotus.logic;
 
-import laivanupotus.logic.GameField;
 import laivanupotus.gui.Gui;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
@@ -14,11 +13,13 @@ import org.junit.Test;
 public class GameFieldTest {
 
     private GameField gameField;
+    private Gui gui;
 
     @Before
     public void setUp() {
-        Gui gui = new Gui();
-        gameField = new GameField(gui);
+        Gui testGui = new Gui();
+        this.gui = testGui;
+        gameField = new GameField(testGui, 2);
     }
 
     @Test
@@ -26,20 +27,35 @@ public class GameFieldTest {
         Assert.assertEquals(0, this.gameField.getShipList().size());
     }
 
+//    @Test
+//    public void createdShipsAreAddedtoShipList() { //Once createTestShips method has been run the shipList should contain 2 ships
+//        this.gameField.createTestShips();
+//        assertEquals(gameField.getShipList().size(), 2);
+//    }
     @Test
-    public void createdShipsAreAddedtoShipList() { //Once createTestShips method has been run the shipList should contain 2 ships
-        this.gameField.createTestShips();
-        assertEquals(gameField.getShipList().size(), 2);
+    public void victoryIsFalseByDefault() { //Boolean victory should ofcourse be false in the beginning
+        assertEquals(gameField.hasEnded(), false);
     }
 
     @Test
-    public void victoryIsFalseByDefault(){ //Boolean victory should ofcourse be false in the beginning
-        assertEquals(gameField.hasEnded(), false);
+    public void GameIsRunning() { //Checks if the method checkForShipsEverySecond is being started
+        assertEquals(gameField.isRunning(), true);
+    }
+
+    @Test
+    public void shipsLeftIsCorrect() {
+        assertEquals(this.gameField.getShipsLeft(), 2);
+    }
+
+    @Test
+    public void guiRemainsUnchanged() {
+        assertEquals(this.gui, this.gameField.getGui());
     }
     
     @Test
-    public void GameIsRunning(){ //Checks if the method checkForShipsEverySecond is being started
-        assertEquals(gameField.isRunning(), true);
+    public void setShipsLeftIsWorking(){
+        gameField.setShipsLeft(2);
+        assertEquals(gameField.getShipsLeft(), 2);
     }
-    
+
 }

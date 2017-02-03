@@ -5,11 +5,7 @@
  */
 package laivanupotus.logic;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JButton;
 
 /**
  *
@@ -53,11 +49,14 @@ public class Ship {
         return cordinates;
     }
 
-    public void destroyPart() {
+    public boolean destroyPart() {
         this.size = this.size - 1;
         if (this.size == 0) {
             System.out.println("You just sank a ship size of " + this.originalLength);
             this.destroyed = true;
+            return true;
+        } else {
+            return false;
         }
     }
 
