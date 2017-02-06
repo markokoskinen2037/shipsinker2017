@@ -26,6 +26,7 @@ public class Gui extends javax.swing.JFrame {
     public ArrayList<JButton> getButtonList() {
         return buttonList;
     }
+    
 
     public Gui() {
         initComponents();
