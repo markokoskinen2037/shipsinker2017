@@ -1,18 +1,9 @@
 package laivanupotus.core;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import laivanupotus.logic.GameField;
-import laivanupotus.gui.Gui;
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
-import laivanupotus.logic.Ship;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Marko
@@ -20,7 +11,9 @@ import laivanupotus.logic.Ship;
 public class Main {
 
     /**
+     * Käynnistää käyttökiittymän ja lisää GameFieldiin muutaman laivan
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         
