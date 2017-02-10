@@ -18,3 +18,6 @@
  - [Pit-raportti](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/dokumentaatio/pit-raportti/index.html)
 
  - [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
+
+ - [Javadoc](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/javadoc/index.html)
+
