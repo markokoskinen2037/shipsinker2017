@@ -11,4 +11,4 @@ Päivä | Tunnit | Kuvaus
 02.02.2017| 2.0h | Parannettu käyttöliittymää, lisätty vertikaalinen rivinumerointi. Lisätty JButtoneille kuvaavat nimi-muuttujat. Lisätty GUI:hin metodi joka palauttaa kaikki sen JButton sisäiset komponentit. Lisätty GameFieldiin metodi addShipToGui, joka ottaa parametrina Ship-olion.
 03.02.2017| 3.0h | Luotu uusia JUnit testejä, päivitetty luokkakaaviota, luotu uudet pit ja checkstyle raportit. Jätetty Main.java ja Gui.java checkstyle testien ulkopuolelle. Formatoitu koodia ja poistettu turhia importteja.
 06.02.2017| 1.3h | Lisätty luokat Menu ja HighScores. Menu hoitaa aloituskäyttöliittymän ja HighScores päivittää ja pitää kirjaa tuloksista.
-10.02.2017| 1.5h | Luotu javadoc kommentit ja korjattu checkstyle virheet.
+10.02.2017| 3.0h | Luotu javadoc kommentit, korjattu checkstyle virheet ja poistettu core & gui paketit pit-testien piiristä. Lisätty muutamia testejä.
