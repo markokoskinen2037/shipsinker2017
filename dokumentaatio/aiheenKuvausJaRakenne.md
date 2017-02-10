@@ -16,4 +16,4 @@ Peli on vuoropohjainen.
 
 **Luokkakaavio**
 
-![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio3.png)
+![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio4.png)
