@@ -1,23 +1,19 @@
 package laivanupotus.core;
 
 import java.io.IOException;
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 import laivanupotus.logic.GameField;
 import laivanupotus.gui.Game;
-=======
->>>>>>> f728964f7c11700e99f676e82bbea0ae32489a62
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
+import laivanupotus.logic.Ship;
 
-/**
- *
- * @author Marko
- */
 public class Main {
 
     /**
-     * Käynnistää käyttökiittymän ja lisää GameFieldiin muutaman laivan
+     * Käynnistää käyttöliittymän ja lisää GameFieldiin muutaman laivan
+     *
      * @param args the command line arguments
      * @throws java.io.IOException
      */
@@ -28,8 +24,6 @@ public class Main {
         Menu menu = new Menu(hs);
         menu.setVisible(true);
 
-
-        
         Game gui = new Game();
         GameField gameField = new GameField(gui, 2);
 

@@ -5,7 +5,6 @@
  */
 package laivanupotus.logic;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,19 +14,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- *
- * @author Marko
+ * Luokka tarjoaa toiminnallisuuden highscores.txt tiedoston luontiin ja lukemiseen.
+ * 
  */
 public class HighScores {
 
     private static final String FILENAME = "highscores.txt";
-    private int worstTime = 0;
-    private int bestTime = 9999;
+    private int worstTime;
+    private int bestTime;
 
-    public HighScores() throws IOException {
-
+    /**
+     * Konstruktori alustaa huonoimman ja parhaan ajan.
+     */
+    public HighScores() {
+        worstTime = 0;
+        bestTime = 9999;
     }
 
+    /**
+     * Metodi lukee highscores.txt tiedostosta 5 riviä ja palauttaa ne ArrayListinä.
+     * @return
+     */
     public ArrayList<String> readHighScores() {
 
         ArrayList<String> topfive = new ArrayList<>();
@@ -65,6 +72,11 @@ public class HighScores {
 
     }
 
+    /**
+     * Metodi lisää highscores.txt tiedostoon parametrina saadut tulokset.
+     * @param name Käyttäjä antaa oman nimensä käyttöliittymän kautta.
+     * @param time GameField tarjoaa peliajan.
+     */
     public void addToHighScores(String name, String time) {
 
         BufferedWriter bw = null;

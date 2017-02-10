@@ -12,9 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Marko Luokka tarjoaa laivojen asetteluun ja pelin kirjanpitoon
- * käytettäviä metodeja.
+ * Luokka tarjoaa laivojen asetteluun ja pelin kirjanpitoon käytettäviä
+ * metodeja.
  */
 public class GameField {
 
@@ -23,19 +22,18 @@ public class GameField {
     private ArrayList<Ship> shipList;
     private boolean running;
 
-<<<<<<< HEAD
-    public GameField(Game gui, int numberOfShips) { //10 laivaa kartalla
-=======
     /**
+     * Konstruktori tallentaa saamansa parametrit omiin private muuttujiinsa,
+     * luo tyhjän listan laivoille ja aloittaa pelin tarkkailun.
      *
-     * @param gui Main metodissa luotu käyttöliittymä
-     * @param numberOfShips main metodissa määritelty laivojen määrä
+     * @param game Main metodin luoma game olio
+     * @param numberOfShips Main metodin kertoma laivojen määrä kartalla
+     * aloitustilanteessa
      */
-    public GameField(Gui gui, int numberOfShips) { //10 laivaa kartalla
->>>>>>> f728964f7c11700e99f676e82bbea0ae32489a62
+    public GameField(Game game, int numberOfShips) { //10 laivaa kartalla
 
         this.shipsLeft = numberOfShips;
-        this.gui = gui;
+        this.gui = game;
         this.shipList = new ArrayList<>();
         checkForShipsEverySecond();
 
@@ -49,17 +47,9 @@ public class GameField {
         return shipsLeft;
     }
 
-    /**
-     * Metodi muuttaa shipsLeft arvon vastaamaan sen parametrina saamaa amount
-     * arvoa.
-     *
-     * @param amount Testin antama lukuarvo uudelle laivojen määrälle.
-     *
-     */
     public void setShipsLeft(int amount) {
         this.shipsLeft = amount;
     }
-
 
     public ArrayList<Ship> getShipList() {
         return shipList;
@@ -123,7 +113,12 @@ public class GameField {
         executor.scheduleAtFixedRate(checkRemainingShips, 0, 1, TimeUnit.SECONDS);
     }
 
+    /**
+     * Palauttaa true jos peli on käynnissä ja false jos peli ei ole käynnissä.
+     *
+     * @return
+     */
     public boolean isRunning() {
-        return running;
+        return this.running;
     }
 }

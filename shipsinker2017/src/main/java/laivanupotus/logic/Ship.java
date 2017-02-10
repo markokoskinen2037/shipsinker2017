@@ -8,8 +8,8 @@ package laivanupotus.logic;
 import java.util.ArrayList;
 
 /**
- *
  * @author Marko
+ * Luokka tarjoaa laivojen käsittelyyn käytettäviä metodeja.
  */
 public class Ship {
 
@@ -17,6 +17,11 @@ public class Ship {
     private int size, originalLength;
     private boolean destroyed = false;
 
+    /**
+     * Konstruktori luo uuden laiva olion.
+     * @param list Laiva oliota luodessa annetaan parametrina lista joka sisältää kyseisen laivan koordinaatit
+     * @param size Laiva oliota luodessa annetaan parametrina kokonaislukumuuttuja joka ilmaisee laivan alkuperäiskoon.
+     */
     public Ship(ArrayList<String> list, int size) {
 
         this.originalLength = list.size();
@@ -24,10 +29,17 @@ public class Ship {
         this.cordinates = list;
     }
 
+    /**
+     * Palauttaa false jos laiva on hengissä ja true jos laiva on tuhottu.
+     * @return
+     */
     public boolean isDestroyed() {
         return destroyed;
     }
 
+    /**
+     * Metodi tulostaa konsoliin kyseisen laivan koordinaatit ja laivan alkuperäiskoon.
+     */
     public void printShipDetails() {
         System.out.println("Shipsize: " + cordinates.size());
         for (String cordinate : cordinates) {
@@ -35,6 +47,10 @@ public class Ship {
         }
     }
 
+    /**
+     * Metodi palauttaa merkkijonon joka sisältää laivan koordinaatit ja laivan koon.
+     * @return
+     */
     @Override
     public String toString() {
         String s = "";
@@ -49,6 +65,11 @@ public class Ship {
         return cordinates;
     }
 
+    /**
+     * Tuhoaa laivasta yhden osan. Jos laivan koko on tuhoamisen jälkeen 0 palautetaan true. Muutoin palautetaan false.
+     * 
+     * @return
+     */
     public boolean destroyPart() {
         this.size = this.size - 1;
         if (this.size == 0) {
