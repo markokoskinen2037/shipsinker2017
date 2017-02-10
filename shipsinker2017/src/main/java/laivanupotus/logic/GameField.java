@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Marko
+ * @author Marko Luokka tarjoaa laivojen asetteluun ja pelin kirjanpitoon
+ * käytettäviä metodeja.
  */
 public class GameField {
 
@@ -22,18 +23,17 @@ public class GameField {
     private ArrayList<Ship> shipList;
     private boolean running;
 
+<<<<<<< HEAD
     public GameField(Game gui, int numberOfShips) { //10 laivaa kartalla
+=======
+    /**
+     *
+     * @param gui Main metodissa luotu käyttöliittymä
+     * @param numberOfShips main metodissa määritelty laivojen määrä
+     */
+    public GameField(Gui gui, int numberOfShips) { //10 laivaa kartalla
+>>>>>>> f728964f7c11700e99f676e82bbea0ae32489a62
 
-        //****  Ship    1
-        //***   Ship    2
-        //***   Ship    3
-        //**    Ship    4
-        //**    Ship    5
-        //**    Ship    6
-        //*     Ship    7
-        //*     Ship    8
-        //*     Ship    9
-        //*     Ship    10
         this.shipsLeft = numberOfShips;
         this.gui = gui;
         this.shipList = new ArrayList<>();
@@ -49,8 +49,15 @@ public class GameField {
         return shipsLeft;
     }
 
-    public void setShipsLeft(int param) {
-        this.shipsLeft = param;
+    /**
+     * Metodi muuttaa shipsLeft arvon vastaamaan sen parametrina saamaa amount
+     * arvoa.
+     *
+     * @param amount Testin antama lukuarvo uudelle laivojen määrälle.
+     *
+     */
+    public void setShipsLeft(int amount) {
+        this.shipsLeft = amount;
     }
 
 
@@ -58,6 +65,13 @@ public class GameField {
         return shipList;
     }
 
+    /**
+     * Lisää parametrina saadun Ship alkion koordinaatteja vastaaviin
+     * JButtoneihin ActionListener tapahtumankuuntelijat joiden avulla GameField
+     * huomaa kun joku laiva tai sen osa tuhoutuu.
+     *
+     * @param ship Main metodin antama parametri
+     */
     public void addShipToGui(Ship ship) {
 
         shipList.add(ship);
