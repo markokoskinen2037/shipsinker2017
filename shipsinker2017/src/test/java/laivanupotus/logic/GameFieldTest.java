@@ -1,6 +1,6 @@
 package laivanupotus.logic;
 
-import laivanupotus.gui.Gui;
+import laivanupotus.gui.Game;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -13,11 +13,11 @@ import org.junit.Test;
 public class GameFieldTest {
 
     private GameField gameField;
-    private Gui gui;
+    private Game gui;
 
     @Before
     public void setUp() {
-        Gui testGui = new Gui();
+        Game testGui = new Game();
         this.gui = testGui;
         gameField = new GameField(testGui, 2);
     }
@@ -32,10 +32,7 @@ public class GameFieldTest {
 //        this.gameField.createTestShips();
 //        assertEquals(gameField.getShipList().size(), 2);
 //    }
-    @Test
-    public void victoryIsFalseByDefault() { //Boolean victory should ofcourse be false in the beginning
-        assertEquals(gameField.hasEnded(), false);
-    }
+
 
     @Test
     public void GameIsRunning() { //Checks if the method checkForShipsEverySecond is being started

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Beast
+ * @author Marko
  */
 public class HighScores {
 
@@ -29,33 +29,33 @@ public class HighScores {
     }
 
     public ArrayList<String> readHighScores() {
-        
+
         ArrayList<String> topfive = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
-            
+
             String sCurrentLine;
-            
+
             int counter = 0;
             while ((sCurrentLine = br.readLine()) != null) {
-                
-                if(counter < 5){
+
+                if (counter < 5) {
                     topfive.add(sCurrentLine);
                     counter++;
                 }
-                
+
                 System.out.println(sCurrentLine);
                 String[] split = sCurrentLine.split(":");
-                
-                if(Integer.parseInt(split[1]) > worstTime){
+
+                if (Integer.parseInt(split[1]) > worstTime) {
                     worstTime = Integer.parseInt(split[1]);
                     System.out.println("Updated worst time");
-                } else if( Integer.parseInt(split[1]) < bestTime){
+                } else if (Integer.parseInt(split[1]) < bestTime) {
                     bestTime = Integer.parseInt(split[1]);
                     System.out.println("Updated best time");
                 }
             }
-            
+
             br.close();
 
         } catch (IOException e) {
@@ -66,15 +66,13 @@ public class HighScores {
     }
 
     public void addToHighScores(String name, String time) {
-        
-        
 
         BufferedWriter bw = null;
         FileWriter fw = null;
 
         try {
 
-            String data = name +":"+ time;
+            String data = name + ":" + time;
 
             File file = new File(FILENAME);
 
@@ -91,7 +89,6 @@ public class HighScores {
             bw.newLine();
 
 //            System.out.println("Done");
-
         } catch (IOException e) {
 
             e.printStackTrace();

@@ -11,11 +11,11 @@ import org.junit.Test;
  */
 public class GuiTest {
 
-    private Gui gui;
+    private Game gui;
 
     @Before
     public void setUp() {
-        this.gui = new Gui();
+        this.gui = new Game();
     }
 
     @Test

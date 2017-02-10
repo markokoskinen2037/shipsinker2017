@@ -1,6 +1,6 @@
 package laivanupotus.logic;
 
-import laivanupotus.gui.Gui;
+import laivanupotus.gui.Game;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,13 +17,12 @@ import javax.swing.JOptionPane;
  */
 public class GameField {
 
-    private final Gui gui;
+    private final Game gui;
     private int shipsLeft;
     private ArrayList<Ship> shipList;
     private boolean running;
-    private final boolean victory = false;
 
-    public GameField(Gui gui, int numberOfShips) { //10 laivaa kartalla
+    public GameField(Game gui, int numberOfShips) { //10 laivaa kartalla
 
         //****  Ship    1
         //***   Ship    2
@@ -42,7 +41,7 @@ public class GameField {
 
     }
 
-    public Gui getGui() {
+    public Game getGui() {
         return gui;
     }
 
@@ -54,9 +53,6 @@ public class GameField {
         this.shipsLeft = param;
     }
 
-    public boolean hasEnded() {
-        return victory;
-    }
 
     public ArrayList<Ship> getShipList() {
         return shipList;

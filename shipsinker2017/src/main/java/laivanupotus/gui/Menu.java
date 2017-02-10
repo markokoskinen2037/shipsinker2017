@@ -9,7 +9,7 @@ import laivanupotus.logic.HighScores;
 
 /**
  *
- * @author Beast
+ * @author Marko
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -17,16 +17,15 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     private HighScores highscores;
-    
+
     public Menu(HighScores highscores) {
         this.highscores = highscores;
         initComponents();
         updateHighScores();
     }
-    
-    
-    public void updateHighScores(){
-        
+
+    public void updateHighScores() {
+
         for (String line : this.highscores.readHighScores()) {
             this.text.append(line + "\n");
         }
@@ -131,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
     }
