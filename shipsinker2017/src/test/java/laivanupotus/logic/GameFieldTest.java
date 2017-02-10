@@ -6,10 +6,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- *
- * @author Marko
- */
 public class GameFieldTest {
 
     private GameField gameField;
@@ -32,8 +28,6 @@ public class GameFieldTest {
 //        this.gameField.createTestShips();
 //        assertEquals(gameField.getShipList().size(), 2);
 //    }
-
-
     @Test
     public void GameIsRunning() { //Checks if the method checkForShipsEverySecond is being started
         assertEquals(gameField.isRunning(), true);
@@ -48,9 +42,9 @@ public class GameFieldTest {
     public void guiRemainsUnchanged() {
         assertEquals(this.gui, this.gameField.getGui());
     }
-    
+
     @Test
-    public void setShipsLeftIsWorking(){
+    public void setShipsLeftIsWorking() {
         gameField.setShipsLeft(2);
         assertEquals(gameField.getShipsLeft(), 2);
     }

@@ -6,5 +6,5 @@
 
 <suppressions>
     <suppress files="Main.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="Gui.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="Game.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

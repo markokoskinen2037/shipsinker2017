@@ -9,7 +9,8 @@ import laivanupotus.logic.HighScores;
 
 /**
  *
- * @author Marko
+ * Käyttöliittymä luokka joka näyttää huipputulokset ja tarjoaa mahdollisuuden
+ * aloittaa pelin.
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -18,12 +19,19 @@ public class Menu extends javax.swing.JFrame {
      */
     private HighScores highscores;
 
+    /**
+     * Konstruktori alusta highscores olion, alustaa komponentit ja päivittää highscore tilastot.
+     * @param highscores Annetaan parametrina Menu olion luomisen yhteydessä.
+     */
     public Menu(HighScores highscores) {
         this.highscores = highscores;
         initComponents();
         updateHighScores();
     }
 
+    /**
+     * Päivittää Menu käyttöliittymän textField elementin 5 parasta aikaa.
+     */
     public void updateHighScores() {
 
         for (String line : this.highscores.readHighScores()) {
@@ -101,6 +109,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_startButtonActionPerformed
 
     /**
+     * Käynnistää Menu käyttöliittymän.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

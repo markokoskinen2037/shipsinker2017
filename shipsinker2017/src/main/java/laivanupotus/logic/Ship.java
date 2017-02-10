@@ -8,7 +8,6 @@ package laivanupotus.logic;
 import java.util.ArrayList;
 
 /**
- * @author Marko
  * Luokka tarjoaa laivojen käsittelyyn käytettäviä metodeja.
  */
 public class Ship {
@@ -19,8 +18,11 @@ public class Ship {
 
     /**
      * Konstruktori luo uuden laiva olion.
-     * @param list Laiva oliota luodessa annetaan parametrina lista joka sisältää kyseisen laivan koordinaatit
-     * @param size Laiva oliota luodessa annetaan parametrina kokonaislukumuuttuja joka ilmaisee laivan alkuperäiskoon.
+     *
+     * @param list Laiva oliota luodessa annetaan parametrina lista joka
+     * sisältää kyseisen laivan koordinaatit
+     * @param size Laiva oliota luodessa annetaan parametrina
+     * kokonaislukumuuttuja joka ilmaisee laivan alkuperäiskoon.
      */
     public Ship(ArrayList<String> list, int size) {
 
@@ -31,14 +33,16 @@ public class Ship {
 
     /**
      * Palauttaa false jos laiva on hengissä ja true jos laiva on tuhottu.
-     * @return
+     *
+     * @return boolean
      */
     public boolean isDestroyed() {
         return destroyed;
     }
 
     /**
-     * Metodi tulostaa konsoliin kyseisen laivan koordinaatit ja laivan alkuperäiskoon.
+     * Metodi tulostaa konsoliin kyseisen laivan koordinaatit ja laivan
+     * alkuperäiskoon.
      */
     public void printShipDetails() {
         System.out.println("Shipsize: " + cordinates.size());
@@ -48,7 +52,9 @@ public class Ship {
     }
 
     /**
-     * Metodi palauttaa merkkijonon joka sisältää laivan koordinaatit ja laivan koon.
+     * Metodi palauttaa merkkijonon joka sisältää laivan koordinaatit ja laivan
+     * koon.
+     *
      * @return
      */
     @Override
@@ -66,9 +72,10 @@ public class Ship {
     }
 
     /**
-     * Tuhoaa laivasta yhden osan. Jos laivan koko on tuhoamisen jälkeen 0 palautetaan true. Muutoin palautetaan false.
-     * 
-     * @return
+     * Tuhoaa laivasta yhden osan. Jos laivan koko on tuhoamisen jälkeen 0
+     * palautetaan true. Muutoin palautetaan false.
+     *
+     * @return boolean
      */
     public boolean destroyPart() {
         this.size = this.size - 1;

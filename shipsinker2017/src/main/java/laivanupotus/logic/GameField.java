@@ -116,7 +116,7 @@ public class GameField {
     /**
      * Palauttaa true jos peli on käynnissä ja false jos peli ei ole käynnissä.
      *
-     * @return
+     * @return boolean
      */
     public boolean isRunning() {
         return this.running;

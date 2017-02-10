@@ -12,8 +12,9 @@ import java.util.HashMap;
 import javax.swing.JButton;
 
 /**
+ * Käyttöliittymäluokka joka sisältää varsinaisen pelialustan jossa peliä
+ * pelataan.
  *
- * @author Marko
  */
 public class Game extends javax.swing.JFrame {
 
@@ -23,11 +24,17 @@ public class Game extends javax.swing.JFrame {
     private HashMap buttonMappi;
     private ArrayList<JButton> buttonList;
 
+    /**
+     * Palauttaa listan joka sisältää kaikki käyttöliittymän JButton komponentit.
+     * @return ArrayList
+     */
     public ArrayList<JButton> getButtonList() {
         return buttonList;
     }
-    
 
+    /**
+     * Konstruktori alustaa komponentti, asettaa otsikon, määrittää JButtoneiden värit ja luo komponenttimapin.
+     */
     public Game() {
         initComponents();
         super.setTitle("Ship Shinker 2017");
@@ -161,6 +168,11 @@ public class Game extends javax.swing.JFrame {
 //        System.out.println("Listan koko: " + buttonList.size());
     }
 
+    /**
+     * Etsii aiemmin luoduta buttonLististä nimen perusteella sitä vastaavan JButton elementin.
+     * @param name Saa parametrinaan nimen jonka perusteella etsitään buttonLististä nimeä vastaava JButton elementti.
+     * @return JButton
+     */
     public JButton getComponentByName(String name) {
         //System.out.println("Seaching for name: " + name);
         for (JButton jButton : buttonList) {
@@ -1839,6 +1851,7 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_a2ActionPerformed
 
     /**
+     * Metodi joka käynnistää Game käyttöliittymän.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

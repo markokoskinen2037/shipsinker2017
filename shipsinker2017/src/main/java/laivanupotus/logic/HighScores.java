@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.logic;
 
 import java.io.BufferedReader;
@@ -14,8 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Luokka tarjoaa toiminnallisuuden highscores.txt tiedoston luontiin ja lukemiseen.
- * 
+ * Luokka tarjoaa toiminnallisuuden highscores.txt tiedoston luontiin ja
+ * lukemiseen.
+ *
  */
 public class HighScores {
 
@@ -32,8 +28,10 @@ public class HighScores {
     }
 
     /**
-     * Metodi lukee highscores.txt tiedostosta 5 riviä ja palauttaa ne ArrayListinä.
-     * @return
+     * Metodi lukee highscores.txt tiedostosta 5 riviä ja palauttaa ne
+     * ArrayListinä.
+     *
+     * @return ArrayList
      */
     public ArrayList<String> readHighScores() {
 
@@ -51,22 +49,22 @@ public class HighScores {
                     counter++;
                 }
 
-                System.out.println(sCurrentLine);
+//                System.out.println(sCurrentLine);
                 String[] split = sCurrentLine.split(":");
 
                 if (Integer.parseInt(split[1]) > worstTime) {
                     worstTime = Integer.parseInt(split[1]);
-                    System.out.println("Updated worst time");
+//                    System.out.println("Updated worst time");
                 } else if (Integer.parseInt(split[1]) < bestTime) {
                     bestTime = Integer.parseInt(split[1]);
-                    System.out.println("Updated best time");
+//                    System.out.println("Updated best time");
                 }
             }
 
             br.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return topfive;
 
@@ -74,6 +72,7 @@ public class HighScores {
 
     /**
      * Metodi lisää highscores.txt tiedostoon parametrina saadut tulokset.
+     *
      * @param name Käyttäjä antaa oman nimensä käyttöliittymän kautta.
      * @param time GameField tarjoaa peliajan.
      */
@@ -103,8 +102,7 @@ public class HighScores {
 //            System.out.println("Done");
         } catch (IOException e) {
 
-            e.printStackTrace();
-
+//            e.printStackTrace();
         } finally {
 
             try {
@@ -118,11 +116,17 @@ public class HighScores {
                 }
 
             } catch (IOException ex) {
-
-                ex.printStackTrace();
-
+//                ex.printStackTrace();
             }
         }
 
+    }
+
+    /**
+     * Metodi poistaa vanhan highscore.txt tiedoston.
+     */
+    public void resetScores() {
+        File file = new File(FILENAME);
+        file.delete();
     }
 }

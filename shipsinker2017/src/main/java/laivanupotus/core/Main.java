@@ -9,6 +9,10 @@ import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
 import laivanupotus.logic.Ship;
 
+/**
+ * Luokka sisältää main metodin joka käynnistää pelin.
+ *
+ */
 public class Main {
 
     /**
