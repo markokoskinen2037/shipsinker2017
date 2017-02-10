@@ -59,6 +59,8 @@ public class GameField {
      * Lisää parametrina saadun Ship alkion koordinaatteja vastaaviin
      * JButtoneihin ActionListener tapahtumankuuntelijat joiden avulla GameField
      * huomaa kun joku laiva tai sen osa tuhoutuu.
+     * 
+     * @see laivanupotus.gui.Game#getComponentByName(java.lang.String) 
      *
      * @param ship Main metodin antama parametri
      */

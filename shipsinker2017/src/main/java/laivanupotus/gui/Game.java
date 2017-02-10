@@ -34,6 +34,8 @@ public class Game extends javax.swing.JFrame {
 
     /**
      * Konstruktori alustaa komponentti, asettaa otsikon, määrittää JButtoneiden värit ja luo komponenttimapin.
+     * 
+     * @see laivanupotus.gui.Game#createComponentMap() 
      */
     public Game() {
         initComponents();
@@ -171,6 +173,7 @@ public class Game extends javax.swing.JFrame {
     /**
      * Etsii aiemmin luoduta buttonLististä nimen perusteella sitä vastaavan JButton elementin.
      * @param name Saa parametrinaan nimen jonka perusteella etsitään buttonLististä nimeä vastaava JButton elementti.
+     * @see laivanupotus.gui.Game#createComponentMap() 
      * @return JButton
      */
     public JButton getComponentByName(String name) {

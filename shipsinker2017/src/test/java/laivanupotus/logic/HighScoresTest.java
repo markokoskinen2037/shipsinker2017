@@ -1,3 +1,5 @@
+package laivanupotus.logic;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +7,6 @@
  */
 
 import java.util.ArrayList;
-import laivanupotus.logic.HighScores;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
