@@ -21,6 +21,7 @@ public class GameField {
     private int shipsLeft;
     private ArrayList<Ship> shipList;
     private boolean running;
+    private HighScores hs;
 
     /**
      * Konstruktori tallentaa saamansa parametrit omiin private muuttujiinsa,
@@ -30,8 +31,8 @@ public class GameField {
      * @param numberOfShips Main metodin kertoma laivojen määrä kartalla
      * aloitustilanteessa
      */
-    public GameField(Game game, int numberOfShips) { //10 laivaa kartalla
-
+    public GameField(Game game, int numberOfShips, HighScores hs) { //10 laivaa kartalla
+        this.hs = hs;
         this.shipsLeft = numberOfShips;
         this.gui = game;
         this.shipList = new ArrayList<>();
@@ -71,6 +72,7 @@ public class GameField {
         for (Object ship1Cordinate : ship.getCordinates()) {
             //System.out.println("Found correct JButton element called: " + gui.getComponentByName(ship1Cordinate.toString()).getName());
             JButton targetButton = gui.getComponentByName(ship1Cordinate.toString());
+            targetButton.setBackground(Color.yellow); //Testausta varten
 
             ActionListener shipListener = new ActionListener() {
                 @Override
@@ -102,6 +104,7 @@ public class GameField {
                 }
 
                 if (getShipsLeft() == 0 && running) {
+                    hs.updateBestPlayer("reiska", "1"); //Tähän pitää lisätä logiikkaa joka ottaa syötteeksi pelaajan nimen!
                     gui.setVisible(false);
                     System.out.println("You beat the game in " + gametime + " seconds!");
                     JOptionPane.showMessageDialog(gui, "You beat the game in " + gametime + " seconds!");

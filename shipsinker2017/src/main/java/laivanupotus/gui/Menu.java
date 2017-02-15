@@ -18,16 +18,19 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     private HighScores highscores;
+    private Game gui;
 
     /**
      * Konstruktori alusta highscores olion, alustaa komponentit ja päivittää highscore tilastot.
      * @param highscores Annetaan parametrina Menu olion luomisen yhteydessä.
      */
-    public Menu(HighScores highscores) {
+    public Menu(HighScores highscores, Game gui) {
         this.highscores = highscores;
+        this.gui = gui;
         initComponents();
         updateHighScores();
     }
+
 
     /**
      * Päivittää Menu käyttöliittymän textField elementin 5 parasta aikaa.
@@ -35,7 +38,7 @@ public class Menu extends javax.swing.JFrame {
     public void updateHighScores() {
 
         for (String line : this.highscores.readHighScores()) {
-            this.text.append(line + "\n");
+            this.bestplayer.setText(line);
         }
     }
 
@@ -51,13 +54,12 @@ public class Menu extends javax.swing.JFrame {
         headerHighscoresList = new javax.swing.JLabel();
         startButton = new javax.swing.JButton();
         headerGamename = new javax.swing.JLabel();
-        highscoresArea = new javax.swing.JScrollPane();
-        text = new javax.swing.JTextArea();
+        bestplayer = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         headerHighscoresList.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        headerHighscoresList.setText("Highscores list:");
+        headerHighscoresList.setText("Best player is: ");
 
         startButton.setText("Start game");
         startButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,10 +71,7 @@ public class Menu extends javax.swing.JFrame {
         headerGamename.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         headerGamename.setText("Welcome to ShipSinker2017");
 
-        text.setEditable(false);
-        text.setColumns(20);
-        text.setRows(5);
-        highscoresArea.setViewportView(text);
+        bestplayer.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,11 +79,13 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(highscoresArea)
-                    .addComponent(headerGamename, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(headerHighscoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(startButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(headerHighscoresList)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bestplayer))
+                    .addComponent(startButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(headerGamename, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -93,19 +94,20 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(headerGamename)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(headerHighscoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(headerHighscoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bestplayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(highscoresArea, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.gui.setVisible(true);
     }//GEN-LAST:event_startButtonActionPerformed
 
     /**
@@ -145,10 +147,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField bestplayer;
     private javax.swing.JLabel headerGamename;
     private javax.swing.JLabel headerHighscoresList;
-    private javax.swing.JScrollPane highscoresArea;
     private javax.swing.JButton startButton;
-    private javax.swing.JTextArea text;
     // End of variables declaration//GEN-END:variables
 }

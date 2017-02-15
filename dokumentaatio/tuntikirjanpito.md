@@ -12,3 +12,5 @@ Päivä | Tunnit | Kuvaus
 03.02.2017| 3.0h | Luotu uusia JUnit testejä, päivitetty luokkakaaviota, luotu uudet pit ja checkstyle raportit. Jätetty Main.java ja Gui.java checkstyle testien ulkopuolelle. Formatoitu koodia ja poistettu turhia importteja.
 06.02.2017| 1.3h | Lisätty luokat Menu ja HighScores. Menu hoitaa aloituskäyttöliittymän ja HighScores päivittää ja pitää kirjaa tuloksista.
 10.02.2017| 3.0h | Kirjoitettu javadoc kommentit ja tehty javadoc dokumentti. Korjattu checkstyle virheet ja poistettu core & gui paketit pit-testien piiristä. Lisätty testejä. 
+13.02.2017| 0.5h | Päivitetty Menu käyttöliittymää. Lisätty pelialustaan kaikki 10 laivaa. 
+15.02.2017| 1.0h | Luotu sekvenssikaaviot

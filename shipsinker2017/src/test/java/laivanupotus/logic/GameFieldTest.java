@@ -10,12 +10,15 @@ public class GameFieldTest {
 
     private GameField gameField;
     private Game gui;
+    private HighScores hs;
 
     @Before
     public void setUp() {
+        HighScores hs = new HighScores();
+        this.hs = hs;
         Game testGui = new Game();
         this.gui = testGui;
-        gameField = new GameField(testGui, 2);
+        gameField = new GameField(testGui, 2,hs);
     }
 
     @Test

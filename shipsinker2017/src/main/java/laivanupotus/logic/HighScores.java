@@ -76,7 +76,13 @@ public class HighScores {
      * @param name Käyttäjä antaa oman nimensä käyttöliittymän kautta.
      * @param time GameField tarjoaa peliajan.
      */
-    public void addToHighScores(String name, String time) {
+    public void updateBestPlayer(String name, String time) {
+
+        if (Integer.parseInt(time) <= this.bestTime) {
+            System.out.println("updating best player");
+        } else {
+            System.out.println("sorry ur time is too bad.");
+        }
 
         BufferedWriter bw = null;
         FileWriter fw = null;
@@ -86,6 +92,7 @@ public class HighScores {
             String data = name + ":" + time;
 
             File file = new File(FILENAME);
+            file.delete();
 
             // if file doesnt exists, then create it
             if (!file.exists()) {

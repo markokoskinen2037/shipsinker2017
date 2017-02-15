@@ -33,17 +33,9 @@ public class HighScoresTest {
     public void readHighScoresReturnValueIsCorrect() {
         ArrayList<String> expected = new ArrayList<>();
 
-        expected.add("Spiderman:2");
-        expected.add("Pekka:3");
-        expected.add("Reiska:4");
-        expected.add("Spiderman:2");
         expected.add("Pekka:3");
        
-        this.hs.addToHighScores("Spiderman", "2");
-        this.hs.addToHighScores("Pekka", "3");
-        this.hs.addToHighScores("Reiska", "4");
-        this.hs.addToHighScores("Spiderman", "2");
-        this.hs.addToHighScores("Pekka", "3");
+        this.hs.updateBestPlayer("Pekka", "3");
         
         
 
@@ -52,7 +44,7 @@ public class HighScoresTest {
     
     @Test
     public void addTest(){
-        this.hs.addToHighScores("Peterson", "2");
+        this.hs.updateBestPlayer("Peterson", "2");
         ArrayList<String> readHighScores = this.hs.readHighScores();
         
         Assert.assertEquals(this.hs.readHighScores().get(0), "Peterson:2");
