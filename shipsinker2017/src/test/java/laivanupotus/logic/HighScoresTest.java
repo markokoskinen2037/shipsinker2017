@@ -39,15 +39,15 @@ public class HighScoresTest {
         
         
 
-        Assert.assertEquals(this.hs.readHighScores(), expected);
+        Assert.assertEquals(this.hs.updateScores(), expected);
     }
     
     @Test
     public void addTest(){
         this.hs.updateBestPlayer("Peterson", "2");
-        ArrayList<String> readHighScores = this.hs.readHighScores();
+        ArrayList<String> readHighScores = this.hs.updateScores();
         
-        Assert.assertEquals(this.hs.readHighScores().get(0), "Peterson:2");
+        Assert.assertEquals(this.hs.updateScores().get(0), "Peterson:2");
         
     }
 

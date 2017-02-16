@@ -91,5 +91,9 @@ public class Ship {
     public int getSize() {
         return size;
     }
+    
+    public void destroyShip(){
+        this.destroyed = true;
+    }
 
 }

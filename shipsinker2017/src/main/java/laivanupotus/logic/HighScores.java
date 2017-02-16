@@ -25,6 +25,8 @@ public class HighScores {
     public HighScores() {
         worstTime = 0;
         bestTime = 9999;
+        updateScores(); //Päivittää huonoimman ja perhaan ajan
+        System.out.println("Updatinr best times. Best time is: " + bestTime);
     }
 
     /**
@@ -33,7 +35,7 @@ public class HighScores {
      *
      * @return ArrayList
      */
-    public ArrayList<String> readHighScores() {
+    public ArrayList<String> updateScores() {
 
         ArrayList<String> topfive = new ArrayList<>();
 
@@ -80,51 +82,51 @@ public class HighScores {
 
         if (Integer.parseInt(time) <= this.bestTime) {
             System.out.println("updating best player");
-        } else {
-            System.out.println("sorry ur time is too bad.");
-        }
 
-        BufferedWriter bw = null;
-        FileWriter fw = null;
-
-        try {
-
-            String data = name + ":" + time;
-
-            File file = new File(FILENAME);
-            file.delete();
-
-            // if file doesnt exists, then create it
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            // true = append file
-            fw = new FileWriter(file.getAbsoluteFile(), true);
-            bw = new BufferedWriter(fw);
-
-            bw.write(data);
-            bw.newLine();
-
-//            System.out.println("Done");
-        } catch (IOException e) {
-
-//            e.printStackTrace();
-        } finally {
+            BufferedWriter bw = null;
+            FileWriter fw = null;
 
             try {
 
-                if (bw != null) {
-                    bw.close();
+                String data = name + ":" + time;
+
+                File file = new File(FILENAME);
+                file.delete();
+
+                // if file doesnt exists, then create it
+                if (!file.exists()) {
+                    file.createNewFile();
                 }
 
-                if (fw != null) {
-                    fw.close();
-                }
+                // true = append file
+                fw = new FileWriter(file.getAbsoluteFile(), true);
+                bw = new BufferedWriter(fw);
 
-            } catch (IOException ex) {
+                bw.write(data);
+                bw.newLine();
+
+//            System.out.println("Done");
+            } catch (IOException e) {
+
+//            e.printStackTrace();
+            } finally {
+
+                try {
+
+                    if (bw != null) {
+                        bw.close();
+                    }
+
+                    if (fw != null) {
+                        fw.close();
+                    }
+
+                } catch (IOException ex) {
 //                ex.printStackTrace();
+                }
             }
+        } else {
+            System.out.println("sorry ur time is too bad.");
         }
 
     }

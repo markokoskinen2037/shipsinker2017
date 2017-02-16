@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 import laivanupotus.logic.GameField;
-import laivanupotus.gui.Game;
+import laivanupotus.gui.GameGui;
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
 import laivanupotus.logic.Ship;
@@ -21,7 +21,7 @@ public class Main {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 //
 //        ArrayList coordinates = new ArrayList<>(); //Ship1
 //        coordinates.add("a5");
@@ -39,19 +39,23 @@ public class Main {
 
         HighScores hs = new HighScores();
 
-        Game gui = new Game();
+        GameGui gui = new GameGui();
         GameField gameField = new GameField(gui, 10, hs);
-        
+//        
         createTestShips(gui,gameField);
-        
-        Menu menu = new Menu(hs, gui);
+//        
+        Menu menu = new Menu(hs, gui, gameField);
         menu.setVisible(true);
+//        
 
-        hs.updateBestPlayer("Pekka", "2");
+        System.out.println("whaddap");
+        
+        
+
 //        gui.setVisible(true);
     }
 
-    public static void createTestShips(Game gui, GameField gameField) {
+    public static void createTestShips(GameGui gui, GameField gameField) {
 
         ArrayList coordinates = new ArrayList<>(); //Ship1
         coordinates.add("a5");

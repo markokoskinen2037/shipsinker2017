@@ -1,6 +1,6 @@
 package laivanupotus.logic;
 
-import laivanupotus.gui.Game;
+import laivanupotus.gui.GameGui;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,30 +17,39 @@ import javax.swing.JOptionPane;
  */
 public class GameField {
 
-    private final Game gui;
+    private final GameGui gui;
     private int shipsLeft;
     private ArrayList<Ship> shipList;
     private boolean running;
     private HighScores hs;
+    private String playername;
 
     /**
      * Konstruktori tallentaa saamansa parametrit omiin private muuttujiinsa,
      * luo tyhjän listan laivoille ja aloittaa pelin tarkkailun.
      *
      * @param game Main metodin luoma game olio
+     * @param hs Main metodin luoma olio
      * @param numberOfShips Main metodin kertoma laivojen määrä kartalla
      * aloitustilanteessa
      */
-    public GameField(Game game, int numberOfShips, HighScores hs) { //10 laivaa kartalla
+    public GameField(GameGui game, int numberOfShips, HighScores hs) { //10 laivaa kartalla
         this.hs = hs;
         this.shipsLeft = numberOfShips;
         this.gui = game;
         this.shipList = new ArrayList<>();
-        checkForShipsEverySecond();
 
     }
 
-    public Game getGui() {
+    public void setPlayerName(String playername) {
+        this.playername = playername;
+    }
+
+    public String getPlayerName() {
+        return this.playername;
+    }
+
+    public GameGui getGui() {
         return gui;
     }
 
@@ -60,8 +69,8 @@ public class GameField {
      * Lisää parametrina saadun Ship alkion koordinaatteja vastaaviin
      * JButtoneihin ActionListener tapahtumankuuntelijat joiden avulla GameField
      * huomaa kun joku laiva tai sen osa tuhoutuu.
-     * 
-     * @see laivanupotus.gui.Game#getComponentByName(java.lang.String) 
+     *
+     * @see laivanupotus.gui.Game#getComponentByName(java.lang.String)
      *
      * @param ship Main metodin antama parametri
      */
@@ -90,7 +99,7 @@ public class GameField {
 
     }
 
-    private void checkForShipsEverySecond() { //Checks how many ships are still left every second
+    public void checkForShipsEverySecond() { //Checks how many ships are still left every second
         this.running = true;
 
         Runnable checkRemainingShips = new Runnable() {
@@ -109,6 +118,8 @@ public class GameField {
                     System.out.println("You beat the game in " + gametime + " seconds!");
                     JOptionPane.showMessageDialog(gui, "You beat the game in " + gametime + " seconds!");
                     running = false;
+                    System.out.println("Updating highscores");
+                    hs.updateBestPlayer(playername, gametime + "");
                 }
 
             }
