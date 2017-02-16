@@ -42,15 +42,11 @@ public class Main {
         GameGui gui = new GameGui();
         GameField gameField = new GameField(gui, 10, hs);
 //        
-        createTestShips(gui,gameField);
+        createTestShips(gui, gameField);
 //        
         Menu menu = new Menu(hs, gui, gameField);
         menu.setVisible(true);
 //        
-
-        System.out.println("whaddap");
-        
-        
 
 //        gui.setVisible(true);
     }

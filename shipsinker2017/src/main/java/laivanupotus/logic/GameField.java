@@ -113,13 +113,13 @@ public class GameField {
                 }
 
                 if (getShipsLeft() == 0 && running) {
-                    hs.updateBestPlayer("reiska", "1"); //Tähän pitää lisätä logiikkaa joka ottaa syötteeksi pelaajan nimen!
                     gui.setVisible(false);
                     System.out.println("You beat the game in " + gametime + " seconds!");
                     JOptionPane.showMessageDialog(gui, "You beat the game in " + gametime + " seconds!");
                     running = false;
                     System.out.println("Updating highscores");
                     hs.updateBestPlayer(playername, gametime + "");
+                    
                 }
 
             }
