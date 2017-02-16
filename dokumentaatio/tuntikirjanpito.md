@@ -14,3 +14,4 @@ Päivä | Tunnit | Kuvaus
 10.02.2017| 3.0h | Kirjoitettu javadoc kommentit ja tehty javadoc dokumentti. Korjattu checkstyle virheet ja poistettu core & gui paketit pit-testien piiristä. Lisätty testejä. 
 13.02.2017| 0.5h | Päivitetty Menu käyttöliittymää. Lisätty pelialustaan kaikki 10 laivaa. 
 15.02.2017| 1.0h | Luotu sekvenssikaaviot
+16.02.2017| 2.0h | Päivitetty ja lisätty testejä, päivitetty menu käyttöliittymään. Korjattu highscore luokan metodit toimimaan oikein. Lisätty pelin alkuun kysely jossa pelaaja antaa nimensä tulosten kirjaamista varten. Asetettu peli alkamaan vasta kun nimi on annettu.
