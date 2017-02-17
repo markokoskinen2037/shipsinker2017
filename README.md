@@ -4,9 +4,9 @@
 
 
 
-- Pelissä pelaajan tarkoitus on tuhota vastustajan laivat, ennen kuin vastustaja tuhoaa pelaajan laivat. Se kenen laivat on tuhottu ensin, häviää pelin.
+- Pelissä pelaajan tarkoitus on tuhota vastustajan laivat mahdollisimman nopeasti ja mahdollisimman vähillä siirroilla.
 - Peliin on tarkoitus lisätä myöhemmin tekoäly, ja kenties laittaa tietokone pelaamaan tietokonetta vastaan.
-- Pelaajalle tarjotaan mahdollisuus asetella laivat itse, tai ne voidaan asetella automaattisesti.
+- Pelaajalle on tarkoituksena tarjota mahdollisuus asetella laivat itse, jos aikaa jää.
 - Parhaat tulokset kirjataan ylös tiedostoon.
 - Peli on vuoropohjainen.
 
