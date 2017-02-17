@@ -9,11 +9,11 @@
 - pelin pelaaminen
 - tulosten tarkkailu
 
-
+##Luokkakaavio
 ![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio5.png)
-##Laivan luonti
+##Sekvenssikaavio -Laivan luonti
 ![Laivan luonti](/dokumentaatio/kuvat/sekvenssikaavio/laivanluonti.png)
-##Laivan tuhoaminen
+##Sekvenssikaavio - Laivan tuhoaminen
 ![Laivan tuhoaminen](/dokumentaatio/kuvat/sekvenssikaavio/laivantuhoaminen.png)
-##Pelialustan luominen
+##Sekvenssikaavio - Pelialustan luominen
 ![Pelialustan luonti](/dokumentaatio/kuvat/sekvenssikaavio/pelialustanluonti.png)
