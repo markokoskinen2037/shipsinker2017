@@ -17,3 +17,8 @@ Peli on vuoropohjainen.
 **Luokkakaavio**
 
 ![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio4.png)
+
+**Sekvenssikaaviot**
+![Laivan luonti](/dokumentaatio/kuvat/sekvenssikaavio/laivanluonti.png)
+![Laivan tuhoaminen](/dokumentaatio/kuvat/sekvenssikaavio/laivantuhoaminen.png)
+![Pelialustan luonti](/dokumentaatio/kuvat/sekvenssikaavio/pelialustanluonti.png)
