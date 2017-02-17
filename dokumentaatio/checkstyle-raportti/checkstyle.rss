@@ -26,7 +26,7 @@ under the License.
     <copyright>&#169;2017</copyright>
     <item>
       <title>File: 6,
-             Errors: 0,
+             Errors: 1,
              Warnings: 0,
              Infos: 0
       </title>
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Game.java">laivanupotus/gui/Game.java</a>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Menu.java">laivanupotus/gui/Menu.java</a>
                 </td>
                 <td>
                   0
@@ -55,12 +55,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Menu.java">laivanupotus/gui/Menu.java</a>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Game.java">laivanupotus/gui/Game.java</a>
                 </td>
                 <td>
                   0

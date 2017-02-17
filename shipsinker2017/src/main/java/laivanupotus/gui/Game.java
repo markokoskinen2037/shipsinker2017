@@ -16,7 +16,7 @@ import javax.swing.JButton;
  * pelataan.
  *
  */
-public class GameGui extends javax.swing.JFrame {
+public class Game extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI
@@ -37,7 +37,7 @@ public class GameGui extends javax.swing.JFrame {
      * 
      * @see laivanupotus.gui.Game#createComponentMap() 
      */
-    public GameGui() {
+    public Game() {
         initComponents();
         super.setTitle("Ship Shinker 2017");
         a1.setBackground(Color.WHITE);
@@ -153,6 +153,7 @@ public class GameGui extends javax.swing.JFrame {
         createComponentMap();
 
     }
+    
 
     private void createComponentMap() {
 
@@ -1771,14 +1772,22 @@ public class GameGui extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1791,7 +1800,7 @@ public class GameGui extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GameGui().setVisible(true);
+                new Game().setVisible(true);
             }
         });
     }

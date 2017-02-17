@@ -1,7 +1,10 @@
 package laivanupotus.logic;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import laivanupotus.gui.GameGui;
+import laivanupotus.gui.Game;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -10,18 +13,17 @@ import org.junit.Test;
 public class GameFieldTest {
 
     private GameField gameField;
-    private GameGui gui;
+    private Game gui;
     private HighScores hs;
 
     @Before
     public void setUp() {
         HighScores hs = new HighScores();
         this.hs = hs;
-        GameGui testGui = new GameGui();
+        Game testGui = new Game();
         this.gui = testGui;
-        gameField = new GameField(testGui, 2,hs);
-        
-        
+        gameField = new GameField(testGui, 2, hs);
+
         ArrayList coordinates = new ArrayList<>(); //Ship1
         coordinates.add("a5");
         coordinates.add("a2");
@@ -36,7 +38,7 @@ public class GameFieldTest {
         coordinates.add("c3");
         Ship ship2 = new Ship(coordinates, coordinates.size());
         gameField.addShipToGui(ship2);
-        
+
     }
 
     @Test
@@ -44,14 +46,9 @@ public class GameFieldTest {
         Assert.assertEquals(2, this.gameField.getShipList().size());
     }
 
-//    @Test
-//    public void createdShipsAreAddedtoShipList() { //Once createTestShips method has been run the shipList should contain 2 ships
-//        this.gameField.createTestShips();
-//        assertEquals(gameField.getShipList().size(), 2);
-//    }
     @Test
     public void GameIsRunning() { //Checks if the method checkForShipsEverySecond is being started
-        assertEquals(gameField.isRunning(), true);
+        assertEquals(gameField.isRunning(), false);
     }
 
     @Test
@@ -69,18 +66,46 @@ public class GameFieldTest {
         gameField.setShipsLeft(2);
         assertEquals(gameField.getShipsLeft(), 2);
     }
-    
+
     @Test
-    public void playerNameIsCorrect(){
+    public void playerNameIsCorrect() {
         gameField.setPlayerName("Reiska");
         assertEquals(gameField.getPlayerName(), "Reiska");
     }
+
+    @Test
+    public void desroyingShipWorks() {
+        gameField.getShipList().get(0).destroyShip();
+        gameField.setShipsLeft(gameField.getShipsLeft() - 1);
+        assertEquals(gameField.getShipsLeft(), 1);
+    }
     
-     @Test
-     public void desroyingShipWorks(){
-         gameField.getShipList().get(0).destroyShip();
-         gameField.setShipsLeft(gameField.getShipsLeft()-1);
-         assertEquals(gameField.getShipsLeft(), 1);
-     }
+    @Test
+    public void defaultActionListenersAreCreated(){
+        ActionListener[] actionListeners = this.gui.getA1().getActionListeners();
+        int deleted = 0;
+        for (ActionListener actionListener : actionListeners) {
+            deleted = 1;
+            this.gui.getA1().removeActionListener(actionListener);
+        }
+        
+        assertEquals(deleted, 1);
+    }
+    
+    @Test
+    public void shipColorIsYellow(){
+        Color background = this.gui.getA2().getBackground();
+        assertEquals(background, Color.yellow);
+    }
+    
+    @Test
+    public void otherButtonsAreGray(){
+        assertEquals(this.gui.getA7().getBackground(), Color.gray);
+    }
+    
+    @Test
+    public void allButtonsHaveListeners(){
+        assertEquals(gui.getA1().getActionListeners().length, 1);
+    }
 
 }

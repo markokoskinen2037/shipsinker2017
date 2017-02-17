@@ -45,7 +45,7 @@ public class Ship {
      * alkuperäiskoon.
      */
     public void printShipDetails() {
-        System.out.println("Shipsize: " + cordinates.size());
+        //System.out.println("Shipsize: " + cordinates.size());
         for (String cordinate : cordinates) {
             System.out.print(cordinate + " | ");
         }
@@ -80,7 +80,7 @@ public class Ship {
     public boolean destroyPart() {
         this.size = this.size - 1;
         if (this.size == 0) {
-            System.out.println("You just sank a ship size of " + this.originalLength);
+            //System.out.println("You just sank a ship size of " + this.originalLength);
             this.destroyed = true;
             return true;
         } else {
@@ -91,8 +91,11 @@ public class Ship {
     public int getSize() {
         return size;
     }
-    
-    public void destroyShip(){
+
+    /**
+     * Tuhoaa kyseisen laivan. Tätä metodia käytetään lähinnä testauksessa.
+     */
+    public void destroyShip() {
         this.destroyed = true;
     }
 

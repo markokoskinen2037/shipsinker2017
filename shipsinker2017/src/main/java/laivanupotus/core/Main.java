@@ -1,10 +1,9 @@
 package laivanupotus.core;
 
-import java.io.IOException;
 
 import java.util.ArrayList;
 import laivanupotus.logic.GameField;
-import laivanupotus.gui.GameGui;
+import laivanupotus.gui.Game;
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
 import laivanupotus.logic.Ship;
@@ -19,9 +18,9 @@ public class Main {
      * Käynnistää käyttöliittymän ja lisää GameFieldiin muutaman laivan
      *
      * @param args the command line arguments
-     * @throws java.io.IOException
+     * 
      */
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
 //
 //        ArrayList coordinates = new ArrayList<>(); //Ship1
 //        coordinates.add("a5");
@@ -37,9 +36,13 @@ public class Main {
 //
 //        gameField.addShipToGui(ship1);
 
+        String path = "/home/markokos/Desktop/shipsinker2017/shipsinker2017/src/main/resources/explosion.mp3";
+
+        
+
         HighScores hs = new HighScores();
 
-        GameGui gui = new GameGui();
+        Game gui = new Game();
         GameField gameField = new GameField(gui, 10, hs);
 //        
         createTestShips(gui, gameField);
@@ -51,7 +54,7 @@ public class Main {
 //        gui.setVisible(true);
     }
 
-    public static void createTestShips(GameGui gui, GameField gameField) {
+    public static void createTestShips(Game gui, GameField gameField) {
 
         ArrayList coordinates = new ArrayList<>(); //Ship1
         coordinates.add("a5");
