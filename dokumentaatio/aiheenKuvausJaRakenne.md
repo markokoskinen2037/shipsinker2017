@@ -14,11 +14,12 @@ Peli on vuoropohjainen.
 - tulosten tarkkailu
 - asetusten muokkaaminen
 
-**Luokkakaavio**
-
+##Luokkakaavio
 ![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio4.png)
 
-**Sekvenssikaaviot**
+##Laivan luonti
 ![Laivan luonti](/dokumentaatio/kuvat/sekvenssikaavio/laivanluonti.png)
+##Laivan tuhoaminen
 ![Laivan tuhoaminen](/dokumentaatio/kuvat/sekvenssikaavio/laivantuhoaminen.png)
+##Pelialustan luominen
 ![Pelialustan luonti](/dokumentaatio/kuvat/sekvenssikaavio/pelialustanluonti.png)
