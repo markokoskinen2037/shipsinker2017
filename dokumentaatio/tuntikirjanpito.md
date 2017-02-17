@@ -15,3 +15,4 @@ Päivä | Tunnit | Kuvaus
 13.02.2017| 0.5h | Päivitetty Menu käyttöliittymää. Lisätty pelialustaan kaikki 10 laivaa. 
 15.02.2017| 1.0h | Luotu sekvenssikaaviot
 16.02.2017| 2.0h | Päivitetty ja lisätty testejä, päivitetty menu käyttöliittymään. Korjattu highscore luokan metodit toimimaan oikein. Lisätty pelin alkuun kysely jossa pelaaja antaa nimensä tulosten kirjaamista varten. Asetettu peli alkamaan vasta kun nimi on annettu.
+17.02.2017| 3.0h | Lisätty logiikka joka pitää kirjaa siirtojen määrästä. Parannettu käyttöliittymää. Lisätty uusiin metodeihin javadoc kommentit. Lisätty testejä. Korjattu checkstyle virheet ja parannettu pit-testikattavuutta. Luotu uudet pit, checstyle ja javadoc raportit.
