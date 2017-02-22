@@ -86,7 +86,7 @@ public class GameField {
             for (ActionListener listener : targetButton.getActionListeners()) {
                 targetButton.removeActionListener(listener);
             }
-            targetButton.setBackground(Color.yellow); //Testausta varten
+            targetButton.setBackground(Color.LIGHT_GRAY); //Testausta varten
 
             ActionListener shipListener = new ActionListener() {
                 @Override
