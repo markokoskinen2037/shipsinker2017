@@ -20,9 +20,10 @@ public class GameFieldTest {
     public void setUp() {
         HighScores hs = new HighScores();
         this.hs = hs;
-        Game testGui = new Game();
+
+        gameField = new GameField(2, hs);
+        Game testGui = new Game(gameField);
         this.gui = testGui;
-        gameField = new GameField(testGui, 2, hs);
 
         ArrayList coordinates = new ArrayList<>(); //Ship1
         coordinates.add("a5");
@@ -30,14 +31,14 @@ public class GameFieldTest {
         coordinates.add("a3");
         coordinates.add("a4");
         Ship ship1 = new Ship(coordinates, coordinates.size());
-        gameField.addShipToGui(ship1);
+        testGui.addShipToGui(ship1);
 
         coordinates.clear(); //Ship 2
         coordinates.add("c1");
         coordinates.add("c2");
         coordinates.add("c3");
         Ship ship2 = new Ship(coordinates, coordinates.size());
-        gameField.addShipToGui(ship2);
+        testGui.addShipToGui(ship2);
 
     }
 
@@ -56,10 +57,6 @@ public class GameFieldTest {
         assertEquals(this.gameField.getShipsLeft(), 2);
     }
 
-    @Test
-    public void guiRemainsUnchanged() {
-        assertEquals(this.gui, this.gameField.getGui());
-    }
 
     @Test
     public void setShipsLeftIsWorking() {
@@ -79,32 +76,32 @@ public class GameFieldTest {
         gameField.setShipsLeft(gameField.getShipsLeft() - 1);
         assertEquals(gameField.getShipsLeft(), 1);
     }
-    
+
     @Test
-    public void defaultActionListenersAreCreated(){
+    public void defaultActionListenersAreCreated() {
         ActionListener[] actionListeners = this.gui.getA1().getActionListeners();
         int deleted = 0;
         for (ActionListener actionListener : actionListeners) {
             deleted = 1;
             this.gui.getA1().removeActionListener(actionListener);
         }
-        
+
         assertEquals(deleted, 1);
     }
-    
+
     @Test
-    public void shipColorIsYellow(){
+    public void shipColorIsYellow() {
         Color background = this.gui.getA2().getBackground();
         assertEquals(background, Color.yellow);
     }
-    
+
     @Test
-    public void otherButtonsAreGray(){
+    public void otherButtonsAreGray() {
         assertEquals(this.gui.getA7().getBackground(), Color.gray);
     }
-    
+
     @Test
-    public void allButtonsHaveListeners(){
+    public void allButtonsHaveListeners() {
         assertEquals(gui.getA1().getActionListeners().length, 1);
     }
 

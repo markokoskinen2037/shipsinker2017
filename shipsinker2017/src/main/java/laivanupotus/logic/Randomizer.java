@@ -10,5 +10,5 @@ package laivanupotus.logic;
  * @author markokos
  */
 public class Randomizer {
-    
+
 }

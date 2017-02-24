@@ -7,9 +7,17 @@ package laivanupotus.gui;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import laivanupotus.logic.GameField;
+import laivanupotus.logic.Ship;
 
 /**
  * Käyttöliittymäluokka joka sisältää varsinaisen pelialustan jossa peliä
@@ -23,21 +31,106 @@ public class Game extends javax.swing.JFrame {
      */
     private HashMap buttonMappi;
     private ArrayList<JButton> buttonList;
+    private static GameField gameField;
 
     /**
-     * Palauttaa listan joka sisältää kaikki käyttöliittymän JButton komponentit.
+     * Palauttaa listan joka sisältää kaikki käyttöliittymän JButton
+     * komponentit.
+     *
      * @return ArrayList
      */
     public ArrayList<JButton> getButtonList() {
         return buttonList;
     }
 
+    public void addShipToGui(Ship ship) {
+
+        this.gameField.shipList.add(ship);
+
+        for (Object ship1Cordinate : ship.getCordinates()) {
+            //System.out.println("Found correct JButton element called: " + gui.getComponentByName(ship1Cordinate.toString()).getName());
+            JButton targetButton = getComponentByName(ship1Cordinate.toString());
+            for (ActionListener listener : targetButton.getActionListeners()) {
+                targetButton.removeActionListener(listener);
+            }
+            targetButton.setBackground(Color.yellow); //Testausta varten
+
+            ActionListener shipListener = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent ae) {
+                    gameField.turnsUsed++;
+                    //System.out.println(turnsUsed);
+                    targetButton.setBackground(Color.black);
+                    targetButton.setEnabled(false);
+                    ship.destroyPart();
+                    if (ship.isDestroyed()) {
+                        gameField.shipsLeft -= 1;
+                    }
+                }
+            };
+            targetButton.addActionListener(shipListener);
+        }
+
+    }
+
+    public void createDefaultActionListeners() {
+        ArrayList<JButton> buttonList = getButtonList();
+
+        for (JButton targetButton : buttonList) {
+            targetButton.setBackground(Color.gray);
+            ActionListener shipListener = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent ae) {
+                    gameField.turnsUsed++;
+//                    System.out.println(turnsUsed);
+                    targetButton.setBackground(Color.BLUE);
+                    targetButton.setEnabled(false);
+
+                }
+            };
+            targetButton.addActionListener(shipListener);
+
+        };
+    }
+
+    public void checkForShipsEverySecond() { //Checks how many ships are still left every second
+        gameField.running = true;
+
+        Runnable checkRemainingShips = new Runnable() {
+            int gametime = 0;
+
+            public void run() {
+
+                if (gameField.getShipsLeft() >= 1) {
+                    System.out.println("ships: " + gameField.getShipsLeft() + " | time:" + gametime);
+                    gametime++;
+                }
+
+                if (gameField.getShipsLeft() == 0 && gameField.running) {
+                    setVisible(false);
+                    System.out.println("You beat the game in " + gametime + " seconds!");
+                    JOptionPane.showMessageDialog(null, "You beat the game in " + gametime + " seconds!");
+                    gameField.running = false;
+                    //System.out.println("Updating highscores");
+                    gameField.hs.updateBestPlayer(gameField.playername, gametime + "");
+
+                }
+
+            }
+        };
+
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+        executor.scheduleAtFixedRate(checkRemainingShips, 0, 1, TimeUnit.SECONDS);
+    }
+
     /**
-     * Konstruktori alustaa komponentti, asettaa otsikon, määrittää JButtoneiden värit ja luo komponenttimapin.
-     * 
-     * @see laivanupotus.gui.Game#createComponentMap() 
+     * Konstruktori alustaa komponentti, asettaa otsikon, määrittää JButtoneiden
+     * värit ja luo komponenttimapin.
+     *
+     * @see laivanupotus.gui.Game#createComponentMap()
      */
-    public Game() {
+    public Game(GameField gameField) {
+        this.gameField = gameField;
         initComponents();
         super.setTitle("Ship Shinker 2017");
         a1.setBackground(Color.WHITE);
@@ -151,9 +244,9 @@ public class Game extends javax.swing.JFrame {
         j10.setBackground(Color.WHITE);
 
         createComponentMap();
+        createDefaultActionListeners();
 
     }
-    
 
     private void createComponentMap() {
 
@@ -172,9 +265,12 @@ public class Game extends javax.swing.JFrame {
     }
 
     /**
-     * Etsii aiemmin luoduta buttonLististä nimen perusteella sitä vastaavan JButton elementin.
-     * @param name Saa parametrinaan nimen jonka perusteella etsitään buttonLististä nimeä vastaava JButton elementti.
-     * @see laivanupotus.gui.Game#createComponentMap() 
+     * Etsii aiemmin luoduta buttonLististä nimen perusteella sitä vastaavan
+     * JButton elementin.
+     *
+     * @param name Saa parametrinaan nimen jonka perusteella etsitään
+     * buttonLististä nimeä vastaava JButton elementti.
+     * @see laivanupotus.gui.Game#createComponentMap()
      * @return JButton
      */
     public JButton getComponentByName(String name) {
@@ -1756,6 +1852,7 @@ public class Game extends javax.swing.JFrame {
 
     /**
      * Metodi joka käynnistää Game käyttöliittymän.
+     *
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -1800,7 +1897,7 @@ public class Game extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Game().setVisible(true);
+                new Game(gameField).setVisible(true);
             }
         });
     }

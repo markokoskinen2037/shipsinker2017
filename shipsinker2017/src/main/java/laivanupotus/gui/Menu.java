@@ -141,7 +141,7 @@ public class Menu extends javax.swing.JFrame {
             this.gui.setVisible(true);
             this.gameField.setPlayerName(this.nameField.getText());
             //System.out.println("Got playername that is:" + this.gameField.getPlayerName());
-            this.gameField.checkForShipsEverySecond();
+            this.gui.checkForShipsEverySecond();
         }
 
     }//GEN-LAST:event_startButtonActionPerformed
