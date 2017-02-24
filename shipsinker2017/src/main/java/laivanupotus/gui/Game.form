@@ -499,9 +499,6 @@
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="a3">
       <Properties>
@@ -637,9 +634,6 @@
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="c1">
       <Properties>

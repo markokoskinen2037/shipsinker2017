@@ -43,6 +43,14 @@ public class ShipTest {
     }
 
     @Test
+    public void destroyPartReturnsTrue() {
+        for (int i = 0; i < 3; i++) {
+            this.testShip.destroyPart();
+        }
+        assertEquals(this.testShip.destroyPart(), true);
+    }
+
+    @Test
     public void toStringIsCorrect() {
         assertEquals(testShip.toString(), "Shipsize:4 A1 | A2 | A3 | A4 | ");
     }

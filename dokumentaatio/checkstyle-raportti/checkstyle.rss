@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 6,
+      <title>File: 7,
              Errors: 1,
              Warnings: 0,
              Infos: 0
@@ -46,6 +46,20 @@ under the License.
           <tbody>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Game.java">laivanupotus/gui/Game.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#laivanupotus.gui.Menu.java">laivanupotus/gui/Menu.java</a>
                 </td>
                 <td>
@@ -60,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#laivanupotus.gui.Game.java">laivanupotus/gui/Game.java</a>
+                  <a href="${project.url}/checkstyle.html#laivanupotus.logic.Randomizer.java">laivanupotus/logic/Randomizer.java</a>
                 </td>
                 <td>
                   0

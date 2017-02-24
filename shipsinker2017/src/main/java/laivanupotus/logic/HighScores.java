@@ -17,16 +17,16 @@ public class HighScores {
 
     private static final String FILENAME = "highscores.txt";
     private int worstTime;
-    private int bestTime;
+    private int bestScore;
 
     /**
      * Konstruktori alustaa huonoimman ja parhaan ajan.
      */
     public HighScores() {
         worstTime = 0;
-        bestTime = 9999;
+        bestScore = 9999;
         updateScores(); //Päivittää huonoimman ja perhaan ajan
-        System.out.println("Updatinr best times. Best time is: " + bestTime);
+        System.out.println("Updating best score. Best score is: " + bestScore);
     }
 
     /**
@@ -57,8 +57,8 @@ public class HighScores {
                 if (Integer.parseInt(split[1]) > worstTime) {
                     worstTime = Integer.parseInt(split[1]);
 //                    System.out.println("Updated worst time");
-                } else if (Integer.parseInt(split[1]) < bestTime) {
-                    bestTime = Integer.parseInt(split[1]);
+                } else if (Integer.parseInt(split[1]) < bestScore) {
+                    bestScore = Integer.parseInt(split[1]);
 //                    System.out.println("Updated best time");
                 }
             }
@@ -80,8 +80,8 @@ public class HighScores {
      */
     public void updateBestPlayer(String name, String time) {
 
-        if (Integer.parseInt(time) <= this.bestTime) {
-            System.out.println("updating best player");
+        if (Integer.parseInt(time) <= this.bestScore) {
+            System.out.println("Updating best player");
 
             BufferedWriter bw = null;
             FileWriter fw = null;
@@ -126,7 +126,7 @@ public class HighScores {
                 }
             }
         } else {
-            System.out.println("sorry ur time is too bad.");
+            System.out.println("Too many turns for highscore, sorry!");
         }
 
     }

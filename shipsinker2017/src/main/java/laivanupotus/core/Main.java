@@ -5,7 +5,6 @@ import laivanupotus.logic.GameField;
 import laivanupotus.gui.Game;
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
-import laivanupotus.logic.Randomizer;
 import laivanupotus.logic.Ship;
 
 /**
@@ -18,9 +17,10 @@ public class Main {
      * Käynnistää käyttöliittymän ja lisää GameFieldiin muutaman laivan
      *
      * @param args the command line arguments
+     * @throws java.lang.InterruptedException
      *
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         String path = "/home/markokos/Desktop/shipsinker2017/shipsinker2017/src/main/resources/explosion.mp3";
 
@@ -31,6 +31,14 @@ public class Main {
         createTestShips(gui, gameField);
         Menu menu = new Menu(hs, gui, gameField);
         menu.setVisible(true);
+
+        while (true) {
+            Thread.sleep(1000);
+            if (gameField.isRunning() == false && menu.isVisible() == false) {
+                System.out.println("Thanks for playing!");
+                System.exit(0);
+            }
+        }
 
     }
 

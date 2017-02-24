@@ -6,8 +6,7 @@
 package laivanupotus.logic;
 
 /**
- *
- * @author markokos
+ * Tarjoaa laivojen automaattisen asetteluun liittyviä metodeja.
  */
 public class Randomizer {
 

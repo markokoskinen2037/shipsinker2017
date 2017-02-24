@@ -43,6 +43,15 @@ public class Game extends javax.swing.JFrame {
         return buttonList;
     }
 
+    /**
+     * Lisää parametrina saadun Ship alkion koordinaatteja vastaaviin
+     * JButtoneihin ActionListener tapahtumankuuntelijat joiden avulla GameField
+     * huomaa kun joku laiva tai sen osa tuhoutuu.
+     *
+     * @see laivanupotus.gui.Game#getComponentByName(java.lang.String)
+     *
+     * @param ship Main metodin antama parametri
+     */
     public void addShipToGui(Ship ship) {
 
         this.gameField.shipList.add(ship);
@@ -73,6 +82,10 @@ public class Game extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Määrittää jokaiselle JButton elementille tapahtumankuuntelijan, joiden
+     * avulla pidetään kirjaan vuoroista ja valituista ruuduista.
+     */
     public void createDefaultActionListeners() {
         ArrayList<JButton> buttonList = getButtonList();
 
@@ -93,7 +106,11 @@ public class Game extends javax.swing.JFrame {
         };
     }
 
-    public void checkForShipsEverySecond() { //Checks how many ships are still left every second
+    /**
+     * Tarkistaa sekunnin välein kuinka monta laivaa on jäljellä. Jos laivoja on
+     * alle 0 havaitaan, että peli on loppu.
+     */
+    public void checkForShipsEverySecond() {
         gameField.running = true;
 
         Runnable checkRemainingShips = new Runnable() {
@@ -101,18 +118,24 @@ public class Game extends javax.swing.JFrame {
 
             public void run() {
 
+                if (gameField.isRunning() == false) {
+
+                }
+
                 if (gameField.getShipsLeft() >= 1) {
-                    System.out.println("ships: " + gameField.getShipsLeft() + " | time:" + gametime);
+                    System.out.println("ships: " + gameField.getShipsLeft() + " | time:" + gametime + " turns used: " + gameField.turnsUsed);
                     gametime++;
                 }
 
                 if (gameField.getShipsLeft() == 0 && gameField.running) {
                     setVisible(false);
-                    System.out.println("You beat the game in " + gametime + " seconds!");
-                    JOptionPane.showMessageDialog(null, "You beat the game in " + gametime + " seconds!");
+                    System.out.println("You beat the game in " + gameField.turnsUsed + " turns!");
+                    JOptionPane.showMessageDialog(null, "You beat the game in " + gameField.turnsUsed + " turns!");
                     gameField.running = false;
                     //System.out.println("Updating highscores");
-                    gameField.hs.updateBestPlayer(gameField.playername, gametime + "");
+                    gameField.hs.updateBestPlayer(gameField.playername, gameField.turnsUsed + "");
+
+                    dispose();
 
                 }
 
@@ -127,6 +150,7 @@ public class Game extends javax.swing.JFrame {
      * Konstruktori alustaa komponentti, asettaa otsikon, määrittää JButtoneiden
      * värit ja luo komponenttimapin.
      *
+     * @param gameField
      * @see laivanupotus.gui.Game#createComponentMap()
      */
     public Game(GameField gameField) {
@@ -818,11 +842,6 @@ public class Game extends javax.swing.JFrame {
         a2.setName("a2"); // NOI18N
         a2.setPreferredSize(new java.awt.Dimension(20, 20));
         a2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        a2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                a2ActionPerformed(evt);
-            }
-        });
 
         a3.setMaximumSize(new java.awt.Dimension(50, 50));
         a3.setMinimumSize(new java.awt.Dimension(50, 50));
@@ -877,11 +896,6 @@ public class Game extends javax.swing.JFrame {
         b1.setName("b1"); // NOI18N
         b1.setPreferredSize(new java.awt.Dimension(20, 20));
         b1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        b1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b1ActionPerformed(evt);
-            }
-        });
 
         c1.setMaximumSize(new java.awt.Dimension(50, 50));
         c1.setMinimumSize(new java.awt.Dimension(50, 50));
@@ -1841,14 +1855,6 @@ public class Game extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_b1ActionPerformed
-
-    private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_a2ActionPerformed
 
     /**
      * Metodi joka käynnistää Game käyttöliittymän.
