@@ -16,3 +16,4 @@ Päivä | Tunnit | Kuvaus
 15.02.2017| 1.0h | Luotu sekvenssikaaviot
 16.02.2017| 2.0h | Päivitetty ja lisätty testejä, päivitetty menu käyttöliittymään. Korjattu highscore luokan metodit toimimaan oikein. Lisätty pelin alkuun kysely jossa pelaaja antaa nimensä tulosten kirjaamista varten. Asetettu peli alkamaan vasta kun nimi on annettu.
 17.02.2017| 3.0h | Lisätty logiikka joka pitää kirjaa siirtojen määrästä. Parannettu käyttöliittymää. Lisätty uusiin metodeihin javadoc kommentit. Lisätty testejä. Korjattu checkstyle virheet ja parannettu pit-testikattavuutta. Luotu uudet pit, checstyle ja javadoc raportit.
+24.02.2017| 4.0h | Lisätty testejä. Luotu uudet checkstyle ja pit raportit. Refaktoroitu käyttöliittymää koskeva koodi pois logic.GameField luokasta. Ohjelma sammuu nyt niin kuin pitääkin. Laadittu rakennekuvaus ja käyttöohje. 
