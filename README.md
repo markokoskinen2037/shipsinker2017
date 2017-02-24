@@ -21,3 +21,6 @@
 
  - [Javadoc](https://htmlpreview.github.io/?https://github.com/markokoskinen2037/shipsinker2017/blob/master/javadoc/index.html)
 
+ - [Rakennekuvaus](dokumentaatio/rakennekuvaus.md)
+ 
+ - [Käyttöohje](dokumentaatio/käyttöohje.md)
