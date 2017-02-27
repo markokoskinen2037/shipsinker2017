@@ -90,7 +90,7 @@ public class Game extends javax.swing.JFrame {
         ArrayList<JButton> buttonList = getButtonList();
 
         for (JButton targetButton : buttonList) {
-            targetButton.setBackground(Color.gray);
+            targetButton.setBackground(Color.cyan);
             ActionListener shipListener = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
@@ -157,118 +157,10 @@ public class Game extends javax.swing.JFrame {
         this.gameField = gameField;
         initComponents();
         super.setTitle("Ship Shinker 2017");
-        a1.setBackground(Color.WHITE);
-        a2.setBackground(Color.WHITE);
-        a3.setBackground(Color.WHITE);
-        a4.setBackground(Color.WHITE);
-        a5.setBackground(Color.WHITE);
-        a6.setBackground(Color.WHITE);
-        a7.setBackground(Color.WHITE);
-        a8.setBackground(Color.WHITE);
-        a9.setBackground(Color.WHITE);
-        a10.setBackground(Color.WHITE);
-
-        b1.setBackground(Color.WHITE);
-        b2.setBackground(Color.WHITE);
-        b3.setBackground(Color.WHITE);
-        b4.setBackground(Color.WHITE);
-        b5.setBackground(Color.WHITE);
-        b6.setBackground(Color.WHITE);
-        b7.setBackground(Color.WHITE);
-        b8.setBackground(Color.WHITE);
-        b9.setBackground(Color.WHITE);
-        b10.setBackground(Color.WHITE);
-
-        c1.setBackground(Color.WHITE);
-        c2.setBackground(Color.WHITE);
-        c3.setBackground(Color.WHITE);
-        c4.setBackground(Color.WHITE);
-        c5.setBackground(Color.WHITE);
-        c6.setBackground(Color.WHITE);
-        c7.setBackground(Color.WHITE);
-        c8.setBackground(Color.WHITE);
-        c9.setBackground(Color.WHITE);
-        c10.setBackground(Color.WHITE);
-
-        d1.setBackground(Color.WHITE);
-        d2.setBackground(Color.WHITE);
-        d3.setBackground(Color.WHITE);
-        d4.setBackground(Color.WHITE);
-        d5.setBackground(Color.WHITE);
-        d6.setBackground(Color.WHITE);
-        d7.setBackground(Color.WHITE);
-        d8.setBackground(Color.WHITE);
-        d9.setBackground(Color.WHITE);
-        d10.setBackground(Color.WHITE);
-
-        e1.setBackground(Color.WHITE);
-        e2.setBackground(Color.WHITE);
-        e3.setBackground(Color.WHITE);
-        e4.setBackground(Color.WHITE);
-        e5.setBackground(Color.WHITE);
-        e6.setBackground(Color.WHITE);
-        e7.setBackground(Color.WHITE);
-        e8.setBackground(Color.WHITE);
-        e9.setBackground(Color.WHITE);
-        e10.setBackground(Color.WHITE);
-
-        f1.setBackground(Color.WHITE);
-        f2.setBackground(Color.WHITE);
-        f3.setBackground(Color.WHITE);
-        f4.setBackground(Color.WHITE);
-        f5.setBackground(Color.WHITE);
-        f6.setBackground(Color.WHITE);
-        f7.setBackground(Color.WHITE);
-        f8.setBackground(Color.WHITE);
-        f9.setBackground(Color.WHITE);
-        f10.setBackground(Color.WHITE);
-
-        g1.setBackground(Color.WHITE);
-        g2.setBackground(Color.WHITE);
-        g3.setBackground(Color.WHITE);
-        g4.setBackground(Color.WHITE);
-        g5.setBackground(Color.WHITE);
-        g6.setBackground(Color.WHITE);
-        g7.setBackground(Color.WHITE);
-        g8.setBackground(Color.WHITE);
-        g9.setBackground(Color.WHITE);
-        g10.setBackground(Color.WHITE);
-
-        h1.setBackground(Color.WHITE);
-        h2.setBackground(Color.WHITE);
-        h3.setBackground(Color.WHITE);
-        h4.setBackground(Color.WHITE);
-        h5.setBackground(Color.WHITE);
-        h6.setBackground(Color.WHITE);
-        h7.setBackground(Color.WHITE);
-        h8.setBackground(Color.WHITE);
-        h9.setBackground(Color.WHITE);
-        h10.setBackground(Color.WHITE);
-
-        i1.setBackground(Color.WHITE);
-        i2.setBackground(Color.WHITE);
-        i3.setBackground(Color.WHITE);
-        i4.setBackground(Color.WHITE);
-        i5.setBackground(Color.WHITE);
-        i6.setBackground(Color.WHITE);
-        i7.setBackground(Color.WHITE);
-        i8.setBackground(Color.WHITE);
-        i9.setBackground(Color.WHITE);
-        i10.setBackground(Color.WHITE);
-
-        j1.setBackground(Color.WHITE);
-        j2.setBackground(Color.WHITE);
-        j3.setBackground(Color.WHITE);
-        j4.setBackground(Color.WHITE);
-        j5.setBackground(Color.WHITE);
-        j6.setBackground(Color.WHITE);
-        j7.setBackground(Color.WHITE);
-        j8.setBackground(Color.WHITE);
-        j9.setBackground(Color.WHITE);
-        j10.setBackground(Color.WHITE);
 
         createComponentMap();
         createDefaultActionListeners();
+
 
     }
 

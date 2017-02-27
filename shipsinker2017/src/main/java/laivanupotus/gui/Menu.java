@@ -5,9 +5,12 @@
  */
 package laivanupotus.gui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import laivanupotus.logic.GameField;
 import laivanupotus.logic.HighScores;
+import laivanupotus.logic.Randomizer;
+import laivanupotus.logic.Ship;
 
 /**
  *
@@ -64,13 +67,14 @@ public class Menu extends javax.swing.JFrame {
         bestplayer = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         headerHighscoresList1 = new javax.swing.JLabel();
+        startRandom = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         headerHighscoresList.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         headerHighscoresList.setText("Enter name:");
 
-        startButton.setText("Start game");
+        startButton.setText("Start default game");
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startButtonActionPerformed(evt);
@@ -91,23 +95,35 @@ public class Menu extends javax.swing.JFrame {
         headerHighscoresList1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         headerHighscoresList1.setText("Best player is: ");
 
+        startRandom.setText("Start randomly generated game (not 100% working)");
+        startRandom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startRandomActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(startButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(headerHighscoresList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(headerHighscoresList1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(bestplayer, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                            .addComponent(nameField)))
-                    .addComponent(headerGamename, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(startRandom, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                            .addComponent(startButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(headerHighscoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(headerHighscoresList1))
+                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(bestplayer, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(nameField)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(headerGamename, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -125,6 +141,8 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(headerHighscoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(startRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -135,6 +153,66 @@ public class Menu extends javax.swing.JFrame {
         if (this.nameField.getText().isEmpty()) {
             JOptionPane.showMessageDialog(gui, "Please enter your name!");
         } else {
+
+            ArrayList coordinates = new ArrayList<>(); //Ship1
+            coordinates.add("a5");
+            coordinates.add("a2");
+            coordinates.add("a3");
+            coordinates.add("a4");
+            Ship ship1 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship1);
+
+            coordinates.clear(); //Ship 2
+            coordinates.add("c1");
+            coordinates.add("c2");
+            coordinates.add("c3");
+            Ship ship2 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship2);
+
+            coordinates.clear(); //Ship 3
+            coordinates.add("f3");
+            coordinates.add("f4");
+            coordinates.add("f5");
+            Ship ship3 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship3);
+
+            coordinates.clear(); //Ship 4
+            coordinates.add("b10");
+            coordinates.add("c10");
+            Ship ship4 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship4);
+
+            coordinates.clear(); //Ship 5
+            coordinates.add("b8");
+            coordinates.add("c8");
+            Ship ship5 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship5);
+
+            coordinates.clear(); //Ship 6
+            coordinates.add("f8");
+            coordinates.add("g8");
+            Ship ship6 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship6);
+
+            coordinates.clear(); //Ship 7
+            coordinates.add("i4");
+            Ship ship7 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship7);
+
+            coordinates.clear(); //Ship 8
+            coordinates.add("d5");
+            Ship ship8 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship8);
+
+            coordinates.clear(); //Ship 9
+            coordinates.add("h2");
+            Ship ship9 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship9);
+
+            coordinates.clear(); //Ship 10
+            coordinates.add("i9");
+            Ship ship10 = new Ship(coordinates, coordinates.size());
+            gui.addShipToGui(ship10);
             this.setVisible(false);
             dispose();
             this.gui.setVisible(true);
@@ -149,6 +227,45 @@ public class Menu extends javax.swing.JFrame {
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void startRandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startRandomActionPerformed
+        if (this.nameField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(gui, "Please enter your name!");
+        } else {
+
+            Randomizer random = new Randomizer(gui, gameField);
+            random.createShip(4);
+            random.createShip(3);
+            random.createShip(3);
+            random.createShip(2);
+            random.createShip(2);
+            random.createShip(2);
+            random.createShip(1);
+            random.createShip(1);
+            random.createShip(1);
+            random.createShip(1);
+
+            ArrayList<Ship> shipList = gameField.getShipList();
+            ArrayList<String> allCords = new ArrayList<>();
+
+            for (Ship ship : shipList) {
+                ArrayList<String> cordinates = ship.getCordinates();
+                for (String cordinate : cordinates) {
+                    if (!allCords.contains(cordinate)) {
+                        allCords.add(cordinate);
+                    }
+                }
+            }
+
+            this.setVisible(false);
+            dispose();
+            this.gui.setVisible(true);
+            this.gameField.setPlayerName(this.nameField.getText());
+            //System.out.println("Got playername that is:" + this.gameField.getPlayerName());
+            this.gui.checkForShipsEverySecond();
+
+        }
+    }//GEN-LAST:event_startRandomActionPerformed
 
     /**
      * Käynnistää Menu käyttöliittymän.
@@ -194,5 +311,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel headerHighscoresList1;
     private javax.swing.JTextField nameField;
     private javax.swing.JButton startButton;
+    private javax.swing.JButton startRandom;
     // End of variables declaration//GEN-END:variables
 }

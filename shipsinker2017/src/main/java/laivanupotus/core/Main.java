@@ -5,6 +5,7 @@ import laivanupotus.logic.GameField;
 import laivanupotus.gui.Game;
 import laivanupotus.gui.Menu;
 import laivanupotus.logic.HighScores;
+import laivanupotus.logic.Randomizer;
 import laivanupotus.logic.Ship;
 
 /**
@@ -21,14 +22,11 @@ public class Main {
      *
      */
     public static void main(String[] args) throws InterruptedException {
-
-        String path = "/home/markokos/Desktop/shipsinker2017/shipsinker2017/src/main/resources/explosion.mp3";
-
         HighScores hs = new HighScores();
-
         GameField gameField = new GameField(10, hs);
         Game gui = new Game(gameField);
-        createTestShips(gui, gameField);
+        
+
         Menu menu = new Menu(hs, gui, gameField);
         menu.setVisible(true);
 
@@ -40,9 +38,10 @@ public class Main {
             }
         }
 
+//        startGame();
     }
 
-    public static void createTestShips(Game gui, GameField gameField) {
+    public static void createDefault(Game gui, GameField gameField) {
 
         ArrayList coordinates = new ArrayList<>(); //Ship1
         coordinates.add("a5");
@@ -103,6 +102,57 @@ public class Main {
         coordinates.add("i9");
         Ship ship10 = new Ship(coordinates, coordinates.size());
         gui.addShipToGui(ship10);
+    }
+
+    public static void startGame() throws InterruptedException {
+
+        String path = "/home/markokos/Desktop/shipsinker2017/shipsinker2017/src/main/resources/explosion.mp3";
+
+        HighScores hs = new HighScores();
+
+        GameField gameField = new GameField(10, hs);
+        Game gui = new Game(gameField);
+        createDefault(gui, gameField);
+        Menu menu = new Menu(hs, gui, gameField);
+        menu.setVisible(true);
+
+        while (true) {
+            Thread.sleep(1000);
+            if (gameField.isRunning() == false && menu.isVisible() == false) {
+                System.out.println("Thanks for playing!");
+                System.exit(0);
+            }
+        }
+    }
+    
+    public static void createRandom(Game gui, GameField gameField){
+        
+        Randomizer random = new Randomizer(gui, gameField);
+        random.createShip(4);
+        random.createShip(3);
+        random.createShip(3);
+        random.createShip(2);
+        random.createShip(2);
+        random.createShip(2);
+        random.createShip(1);
+        random.createShip(1);
+        random.createShip(1);
+        random.createShip(1);
+        
+        ArrayList<Ship> shipList = gameField.getShipList();
+        ArrayList<String> allCords = new ArrayList<>();
+
+        for (Ship ship : shipList) {
+            ArrayList<String> cordinates = ship.getCordinates();
+            for (String cordinate : cordinates) {
+                if(allCords.contains(cordinate)){
+                    //System.out.println("se oli siel jo, uusiks menee");
+                } else {
+                    allCords.add(cordinate);
+                }
+            }
+        }
+        
     }
 
 }

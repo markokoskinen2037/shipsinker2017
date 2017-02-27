@@ -24,7 +24,7 @@ public class GuiTest {
 
     @Test
     public void buttonColorIsCorrect() { //By default button backgroundColor should be white
-        assertEquals(gui.getA1().getBackground(), Color.gray);
+        assertEquals(gui.getA1().getBackground(), Color.CYAN);
 
     }
 

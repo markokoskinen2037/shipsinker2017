@@ -9,6 +9,7 @@ import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class GameFieldTest {
 
@@ -96,8 +97,8 @@ public class GameFieldTest {
     }
 
     @Test
-    public void otherButtonsAreGray() {
-        assertEquals(this.gui.getA7().getBackground(), Color.gray);
+    public void otherButtonsAreCyan() {
+        assertEquals(this.gui.getA7().getBackground(), Color.cyan);
     }
 
     @Test

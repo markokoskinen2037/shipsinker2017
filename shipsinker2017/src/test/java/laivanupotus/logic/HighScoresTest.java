@@ -33,9 +33,9 @@ public class HighScoresTest {
     public void readHighScoresReturnValueIsCorrect() {
         ArrayList<String> expected = new ArrayList<>();
 
-        expected.add("Pekka:3");
+        expected.add("Pekka:50");
        
-        this.hs.updateBestPlayer("Pekka", "3");
+        this.hs.updateBestPlayer("Pekka", "50");
         
         
 
