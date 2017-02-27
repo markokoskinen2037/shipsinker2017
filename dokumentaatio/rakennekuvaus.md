@@ -6,7 +6,7 @@ Main luokka luo ennalta määrättyjen arvojen perusteella logiikka luokan oliot
 Logiikkaluokat on jaettu seuraavasti:
 - GameField, joka toimii pelin tärkeimpänä luokkana hoitaen kirjanpitoa.
 - HighScores, joka pitää kirjaa pelituloksista.
-- Randomizer, (ei vielä toteutettu)
+- Randomizer, asettelee laivat peliruudukkoon satunnaisesti. (Ei vielä täysin moitteettomasti!)
 - Ship, joka muodostaa ship olioita joita GameField käyttää hyväkseen.
 
 Käyttöliittymäluokkia on kaksi:
