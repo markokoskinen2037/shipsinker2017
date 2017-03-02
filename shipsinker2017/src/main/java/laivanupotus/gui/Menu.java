@@ -5,7 +5,11 @@
  */
 package laivanupotus.gui;
 
+import java.io.File;
 import java.util.ArrayList;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javax.swing.JOptionPane;
 import laivanupotus.logic.GameField;
 import laivanupotus.logic.HighScores;
@@ -40,6 +44,18 @@ public class Menu extends javax.swing.JFrame {
         this.gui = gui;
         initComponents();
         updateHighScores();
+        playThemeSong();
+    }
+
+    public void playThemeSong() {
+        try {
+            JFXPanel j = new JFXPanel();
+            String uri = new File("menu.mp3").toURI().toString();
+            MediaPlayer player = new MediaPlayer(new Media(uri));
+            player.play();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
     }
 
     /**

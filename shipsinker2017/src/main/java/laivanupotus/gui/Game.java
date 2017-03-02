@@ -9,11 +9,15 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import laivanupotus.logic.GameField;
@@ -72,6 +76,14 @@ public class Game extends javax.swing.JFrame {
                     targetButton.setBackground(Color.black);
                     targetButton.setEnabled(false);
                     ship.destroyPart();
+                    try {
+                        JFXPanel j = new JFXPanel();
+                        String uri = new File("explosion.mp3").toURI().toString();
+                        new MediaPlayer(new Media(uri)).play();
+                        //JOptionPane.showMessageDialog(null, uri);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex);
+                    }
                     if (ship.isDestroyed()) {
                         gameField.shipsLeft -= 1;
                     }
@@ -98,6 +110,15 @@ public class Game extends javax.swing.JFrame {
 //                    System.out.println(turnsUsed);
                     targetButton.setBackground(Color.BLUE);
                     targetButton.setEnabled(false);
+
+                    try {
+                        JFXPanel j = new JFXPanel();
+                        String uri = new File("water.wav").toURI().toString();
+                        new MediaPlayer(new Media(uri)).play();
+                        //JOptionPane.showMessageDialog(null, uri);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex);
+                    }
 
                 }
             };
@@ -130,6 +151,14 @@ public class Game extends javax.swing.JFrame {
                 if (gameField.getShipsLeft() == 0 && gameField.running) {
                     setVisible(false);
                     System.out.println("You beat the game in " + gameField.turnsUsed + " turns!");
+                    try {
+                        JFXPanel j = new JFXPanel();
+                        String uri = new File("fanfare.wav").toURI().toString();
+                        new MediaPlayer(new Media(uri)).play();
+                        //JOptionPane.showMessageDialog(null, uri);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex);
+                    }
                     JOptionPane.showMessageDialog(null, "You beat the game in " + gameField.turnsUsed + " turns!");
                     gameField.running = false;
                     //System.out.println("Updating highscores");
@@ -160,7 +189,6 @@ public class Game extends javax.swing.JFrame {
 
         createComponentMap();
         createDefaultActionListeners();
-
 
     }
 

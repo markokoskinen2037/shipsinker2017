@@ -43,8 +43,8 @@ public class Randomizer {
 
         xStart = 0;
         yStart = 0;
-        yEnd = 9 - size;
-        xEnd = 9 - size;
+        yEnd = 10 - size;
+        xEnd = 10 - size;
 
         int randomX = ThreadLocalRandom.current().nextInt(xStart, xEnd);
         int randomY = ThreadLocalRandom.current().nextInt(yStart, yEnd);
@@ -111,24 +111,31 @@ public class Randomizer {
      * @param koordinaatti Sovelluksen antama parametri.
      */
     public void lisaaViereisetPoisKaytosta(String koordinaatti) {
-        char[] toCharArray = koordinaatti.toCharArray();
+        char[] toCharArray = koordinaatti.toCharArray(); //c5
         char x = toCharArray[0];
-        String y = toCharArray[1] + "";
+        String y = toCharArray[1] + ""; // 5
 
         int parseInt = Integer.parseInt(y);
 
-        inUse.add(x + "" + parseInt++);
+        inUse.add(x + "" + parseInt++); // c5
         parseInt--;
-        inUse.add(x + "" + parseInt--);
+        inUse.add(x + "" + parseInt--); // c4
 
-        char originalX = x;
-        x = getRight(x);
+        
+        //c5
+        // c3,c5
+        // b3,b4,b5
+        //d3,d4,d5
+        
+        
+        char originalX = x; // c
+        x = getRight(x); // d
 
-        inUse.add(x + y);
+        inUse.add(x + y); // d5
 
-        x = getLeft(x);
+        x = getLeft(originalX); // b
 
-        inUse.add(x + y);
+        inUse.add(x + y); // b5
     }
 
     /**

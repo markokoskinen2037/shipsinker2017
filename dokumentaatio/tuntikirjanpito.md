@@ -18,3 +18,4 @@ Päivä | Tunnit | Kuvaus
 17.02.2017| 3.0h | Lisätty logiikka joka pitää kirjaa siirtojen määrästä. Parannettu käyttöliittymää. Lisätty uusiin metodeihin javadoc kommentit. Lisätty testejä. Korjattu checkstyle virheet ja parannettu pit-testikattavuutta. Luotu uudet pit, checstyle ja javadoc raportit.
 24.02.2017| 4.0h | Lisätty testejä. Luotu uudet checkstyle ja pit raportit. Refaktoroitu käyttöliittymää koskeva koodi pois logic.GameField luokasta. Ohjelma sammuu nyt niin kuin pitääkin. Laadittu rakennekuvaus ja käyttöohje. 
 27.02.2017| 4.0h | Lisätty testejä. Luotu Randomizer luokka joka asettelee laivat satunnaisesti pelialustalle. Lisätty käyttöliittymään mahdollisuus pelata default tai random laudoilla.
+02.03.2017| 1.0h | Lisätty äänet laivan räjähdykseen, panoksen veteen osumiseen, päävalikkoon ja pelin päättymiseen!
