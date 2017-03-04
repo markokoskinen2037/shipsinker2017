@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
@@ -36,6 +36,8 @@ public class Game extends javax.swing.JFrame {
     private HashMap buttonMappi;
     private ArrayList<JButton> buttonList;
     private static GameField gameField;
+    private MediaPlayer player;
+    private MediaPlayer menuPlayer;
 
     /**
      * Palauttaa listan joka sisältää kaikki käyttöliittymän JButton
@@ -61,12 +63,11 @@ public class Game extends javax.swing.JFrame {
         this.gameField.shipList.add(ship);
 
         for (Object ship1Cordinate : ship.getCordinates()) {
-            //System.out.println("Found correct JButton element called: " + gui.getComponentByName(ship1Cordinate.toString()).getName());
             JButton targetButton = getComponentByName(ship1Cordinate.toString());
             for (ActionListener listener : targetButton.getActionListeners()) {
                 targetButton.removeActionListener(listener);
             }
-            targetButton.setBackground(Color.yellow); //Testausta varten
+            targetButton.setBackground(Color.cyan); //Muutamalla tätä saa koodit päälle!
 
             ActionListener shipListener = new ActionListener() {
                 @Override
@@ -78,8 +79,10 @@ public class Game extends javax.swing.JFrame {
                     ship.destroyPart();
                     try {
                         JFXPanel j = new JFXPanel();
-                        String uri = new File("explosion.mp3").toURI().toString();
-                        new MediaPlayer(new Media(uri)).play();
+                        URL url = this.getClass().getResource("/explosion.mp3");
+
+                        player = new MediaPlayer(new Media(url.toString()));
+                        player.play();
                         //JOptionPane.showMessageDialog(null, uri);
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex);
@@ -92,6 +95,10 @@ public class Game extends javax.swing.JFrame {
             targetButton.addActionListener(shipListener);
         }
 
+    }
+
+    public void addMediaPlayer(MediaPlayer menu) {
+        this.menuPlayer = menu;
     }
 
     /**
@@ -112,10 +119,10 @@ public class Game extends javax.swing.JFrame {
                     targetButton.setEnabled(false);
 
                     try {
-                        JFXPanel j = new JFXPanel();
-                        String uri = new File("water.wav").toURI().toString();
-                        new MediaPlayer(new Media(uri)).play();
-                        //JOptionPane.showMessageDialog(null, uri);
+                        URL url = this.getClass().getResource("/water.wav");
+                        //String uri = new File(in+"").toURI().toString();
+                        player = new MediaPlayer(new Media(url.toString()));
+                        player.play();
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex);
                     }
@@ -139,10 +146,6 @@ public class Game extends javax.swing.JFrame {
 
             public void run() {
 
-                if (gameField.isRunning() == false) {
-
-                }
-
                 if (gameField.getShipsLeft() >= 1) {
                     System.out.println("ships: " + gameField.getShipsLeft() + " | time:" + gametime + " turns used: " + gameField.turnsUsed);
                     gametime++;
@@ -151,10 +154,13 @@ public class Game extends javax.swing.JFrame {
                 if (gameField.getShipsLeft() == 0 && gameField.running) {
                     setVisible(false);
                     System.out.println("You beat the game in " + gameField.turnsUsed + " turns!");
+
                     try {
-                        JFXPanel j = new JFXPanel();
-                        String uri = new File("fanfare.wav").toURI().toString();
-                        new MediaPlayer(new Media(uri)).play();
+                        URL url = this.getClass().getResource("/fanfare.wav");
+                        menuPlayer.stop();
+                        player = new MediaPlayer(new Media(url.toString()));
+                        player.play();
+
                         //JOptionPane.showMessageDialog(null, uri);
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex);

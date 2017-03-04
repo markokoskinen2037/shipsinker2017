@@ -1,6 +1,7 @@
 package laivanupotus.core;
 
 import java.util.ArrayList;
+import javafx.scene.media.MediaPlayer;
 import laivanupotus.logic.GameField;
 import laivanupotus.gui.Game;
 import laivanupotus.gui.Menu;
@@ -25,9 +26,9 @@ public class Main {
         HighScores hs = new HighScores();
         GameField gameField = new GameField(10, hs);
         Game gui = new Game(gameField);
-        
 
-        Menu menu = new Menu(hs, gui, gameField);
+        MediaPlayer player = null;
+        Menu menu = new Menu(hs, gui, gameField, player);
         menu.setVisible(true);
 
         while (true) {
@@ -113,7 +114,8 @@ public class Main {
         GameField gameField = new GameField(10, hs);
         Game gui = new Game(gameField);
         createDefault(gui, gameField);
-        Menu menu = new Menu(hs, gui, gameField);
+        MediaPlayer player = null;
+        Menu menu = new Menu(hs, gui, gameField, player);
         menu.setVisible(true);
 
         while (true) {
@@ -124,9 +126,9 @@ public class Main {
             }
         }
     }
-    
-    public static void createRandom(Game gui, GameField gameField){
-        
+
+    public static void createRandom(Game gui, GameField gameField) {
+
         Randomizer random = new Randomizer(gui, gameField);
         random.createShip(4);
         random.createShip(3);
@@ -138,21 +140,21 @@ public class Main {
         random.createShip(1);
         random.createShip(1);
         random.createShip(1);
-        
+
         ArrayList<Ship> shipList = gameField.getShipList();
         ArrayList<String> allCords = new ArrayList<>();
 
         for (Ship ship : shipList) {
             ArrayList<String> cordinates = ship.getCordinates();
             for (String cordinate : cordinates) {
-                if(allCords.contains(cordinate)){
+                if (allCords.contains(cordinate)) {
                     //System.out.println("se oli siel jo, uusiks menee");
                 } else {
                     allCords.add(cordinate);
                 }
             }
         }
-        
+
     }
 
 }

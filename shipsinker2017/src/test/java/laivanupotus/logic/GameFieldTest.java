@@ -1,12 +1,10 @@
 package laivanupotus.logic;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import laivanupotus.gui.Game;
 import org.junit.Assert;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -58,7 +56,6 @@ public class GameFieldTest {
         assertEquals(this.gameField.getShipsLeft(), 2);
     }
 
-
     @Test
     public void setShipsLeftIsWorking() {
         gameField.setShipsLeft(2);
@@ -91,9 +88,9 @@ public class GameFieldTest {
     }
 
     @Test
-    public void shipColorIsYellow() {
+    public void cheatsAreNotOn() {
         Color background = this.gui.getA2().getBackground();
-        assertEquals(background, Color.yellow);
+        assertEquals(background, Color.cyan);
     }
 
     @Test

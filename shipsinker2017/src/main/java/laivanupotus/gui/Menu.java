@@ -5,7 +5,7 @@
  */
 package laivanupotus.gui;
 
-import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.media.Media;
@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
     private HighScores highscores;
     private Game gui;
     private GameField gameField;
+    private MediaPlayer player;
 
     /**
      * Konstruktori alusta highscores olion, alustaa komponentit ja päivittää
@@ -38,7 +39,8 @@ public class Menu extends javax.swing.JFrame {
      * @param gui Annetaan parametrina Menu olion luomisen yhteydessä.
      * @param gameField Annetaan parametrina Menu olion luomisen yhdeydessä.
      */
-    public Menu(HighScores highscores, Game gui, GameField gameField) {
+    public Menu(HighScores highscores, Game gui, GameField gameField, MediaPlayer player) throws InterruptedException {
+        this.player = player;
         this.gameField = gameField;
         this.highscores = highscores;
         this.gui = gui;
@@ -47,15 +49,23 @@ public class Menu extends javax.swing.JFrame {
         playThemeSong();
     }
 
-    public void playThemeSong() {
+    
+
+    private void playThemeSong() {
         try {
             JFXPanel j = new JFXPanel();
-            String uri = new File("menu.mp3").toURI().toString();
-            MediaPlayer player = new MediaPlayer(new Media(uri));
+            URL url = this.getClass().getResource("/menu.mp3");
+            System.out.println(url);
+            //String uri = new File(in+"").toURI().toString();
+            player = new MediaPlayer(new Media(url.toString()));
             player.play();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
+    }
+    
+    public void StopThemeSong(){
+        this.player.stop();
     }
 
     /**
@@ -235,6 +245,7 @@ public class Menu extends javax.swing.JFrame {
             this.gameField.setPlayerName(this.nameField.getText());
             //System.out.println("Got playername that is:" + this.gameField.getPlayerName());
             this.gui.checkForShipsEverySecond();
+            this.gui.addMediaPlayer(player);
 
         }
 
