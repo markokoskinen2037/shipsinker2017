@@ -20,3 +20,4 @@ Päivä | Tunnit | Kuvaus
 27.02.2017| 4.0h | Lisätty testejä. Luotu Randomizer luokka joka asettelee laivat satunnaisesti pelialustalle. Lisätty käyttöliittymään mahdollisuus pelata default tai random laudoilla.
 02.03.2017| 1.0h | Lisätty äänet laivan räjähdykseen, panoksen veteen osumiseen, päävalikkoon ja pelin päättymiseen!
 04.03.2017| 2.0h | Korjattu, että äänet toimii myös jar tiedostoa ajettaessa. Laitettu taustamusiikkia soimaan pelin ajaksi. Päivitetty testejä.
+05.03.2017| 2.0h | Poistettu turhia metodeja, päivitetty dokumentaatiota ja javadoccia.

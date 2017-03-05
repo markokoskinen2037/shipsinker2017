@@ -24,18 +24,18 @@ public class GuiTest {
 
     @Test
     public void buttonColorIsCorrect() { //By default button backgroundColor should be white
-        assertEquals(gui.getA1().getBackground(), Color.CYAN);
+        assertEquals(gui.getComponentByName("a1").getBackground(), Color.CYAN);
 
     }
 
     @Test
     public void buttonIsClickable() { //By default button should be clickable
-        assertEquals(gui.getA1().isEnabled(), true);
+        assertEquals(gui.getComponentByName("a1").isEnabled(), true);
     }
 
     @Test
     public void buttonTestIsEmpty() { //By default button should have no text
-        assertEquals(gui.getA1().getText(), "");
+        assertEquals(gui.getComponentByName("a1").getText(), "");
     }
 
     @Test

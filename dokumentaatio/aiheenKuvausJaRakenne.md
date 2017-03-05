@@ -10,7 +10,7 @@
 - tulosten tarkkailu
 
 ##Luokkakaavio
-![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio5.png)
+![luokkakaavio](/dokumentaatio/kuvat/luokkakaavio6.png)
 ##Sekvenssikaavio -Laivan luonti
 ![Laivan luonti](/dokumentaatio/kuvat/sekvenssikaavio/laivanluonti.png)
 ##Sekvenssikaavio - Laivan tuhoaminen

@@ -39,9 +39,15 @@ public class Main {
             }
         }
 
-//        startGame();
     }
 
+    /**
+     * Käynnistää etukäteen määritellyn pelialustan jossa laivojen sijainnit
+     * ovat varmasti oikein.
+     *
+     * @param gui Ohjelman antama parametri
+     * @param gameField Ohjelman antama parametri
+     */
     public static void createDefault(Game gui, GameField gameField) {
 
         ArrayList coordinates = new ArrayList<>(); //Ship1
@@ -105,28 +111,13 @@ public class Main {
         gui.addShipToGui(ship10);
     }
 
-    public static void startGame() throws InterruptedException {
-
-        String path = "/home/markokos/Desktop/shipsinker2017/shipsinker2017/src/main/resources/explosion.mp3";
-
-        HighScores hs = new HighScores();
-
-        GameField gameField = new GameField(10, hs);
-        Game gui = new Game(gameField);
-        createDefault(gui, gameField);
-        MediaPlayer player = null;
-        Menu menu = new Menu(hs, gui, gameField, player);
-        menu.setVisible(true);
-
-        while (true) {
-            Thread.sleep(1000);
-            if (gameField.isRunning() == false && menu.isVisible() == false) {
-                System.out.println("Thanks for playing!");
-                System.exit(0);
-            }
-        }
-    }
-
+    /**
+     * Käynnistää satunnaisesti generoidun pelin. HUOM! tämä metodi ei aina
+     * toimi toivotulla tavalla.
+     *
+     * @param gui Ohjelman antama parametri
+     * @param gameField Ohjelman antama parametri
+     */
     public static void createRandom(Game gui, GameField gameField) {
 
         Randomizer random = new Randomizer(gui, gameField);

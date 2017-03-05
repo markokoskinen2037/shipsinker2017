@@ -77,11 +77,11 @@ public class GameFieldTest {
 
     @Test
     public void defaultActionListenersAreCreated() {
-        ActionListener[] actionListeners = this.gui.getA1().getActionListeners();
+        ActionListener[] actionListeners = this.gui.getComponentByName("a1").getActionListeners();
         int deleted = 0;
         for (ActionListener actionListener : actionListeners) {
             deleted = 1;
-            this.gui.getA1().removeActionListener(actionListener);
+            this.gui.getComponentByName("a1").removeActionListener(actionListener);
         }
 
         assertEquals(deleted, 1);
@@ -89,18 +89,18 @@ public class GameFieldTest {
 
     @Test
     public void cheatsAreNotOn() {
-        Color background = this.gui.getA2().getBackground();
+        Color background = this.gui.getComponentByName("a2").getBackground();
         assertEquals(background, Color.cyan);
     }
 
     @Test
     public void otherButtonsAreCyan() {
-        assertEquals(this.gui.getA7().getBackground(), Color.cyan);
+        assertEquals(this.gui.getComponentByName("a7").getBackground(), Color.cyan);
     }
 
     @Test
     public void allButtonsHaveListeners() {
-        assertEquals(gui.getA1().getActionListeners().length, 1);
+        assertEquals(gui.getComponentByName("a1").getActionListeners().length, 1);
     }
 
 }
