@@ -51,15 +51,12 @@ public class HighScores {
                     counter++;
                 }
 
-//                System.out.println(sCurrentLine);
                 String[] split = sCurrentLine.split(":");
 
                 if (Integer.parseInt(split[1]) > worstTime) {
                     worstTime = Integer.parseInt(split[1]);
-//                    System.out.println("Updated worst time");
                 } else if (Integer.parseInt(split[1]) < bestScore) {
                     bestScore = Integer.parseInt(split[1]);
-//                    System.out.println("Updated best time");
                 }
             }
 
@@ -105,7 +102,6 @@ public class HighScores {
                 bw.write(data);
                 bw.newLine();
 
-//            System.out.println("Done");
             } catch (IOException e) {
 
 //            e.printStackTrace();
