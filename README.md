@@ -8,7 +8,7 @@
 - Parhaat tulokset kirjataan ylös tiedostoon.
 - Huipputuloksen saamiseksi pelaajan täytyy loogisesti päätellä laivojen mahdollisia sijainteja.
 
-##Dokumentaatio
+# Dokumentaatio
  - [Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
  - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
